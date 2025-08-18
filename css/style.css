@@ -75,6 +75,13 @@ footer {
     text-transform: none;
 }
 
+#rsvpButton {
+    font-family: "Antic Didone", serif;
+    font-size: 36px;
+    font-weight: 100;
+    letter-spacing: 3px;
+}
+
 /* classes */
 .container {
     display: flex;
@@ -103,13 +110,13 @@ footer {
     font-size: 40px;
 }
 
-.cta-button {
+.cta-link {
     letter-spacing: 3px;
     font-size: 30px;
     font-family: "Antic Didone", serif;
 }
   
-.cta-button:hover {
+.cta-link:hover {
     transform: scale(1.05);
 }
 
