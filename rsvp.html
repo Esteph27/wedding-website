@@ -20,7 +20,7 @@
         <div class="vertical-line"></div>
     </div>
 
-    <!-- Venue guest info -->
+    <!-- rsvp info and welcome message -->
     <div class="info">
         <div>
             <p>We are so excited to celebrate our special day with you!
@@ -43,11 +43,36 @@
         <div class="vertical-line"></div>
     </div>
 
+    <!-- rsvp button -->
     <div class="info">
         <div>
-            <button id="rsvpButton">RSVP</button>
+            <!-- <button id="rsvpButton">RSVP</button> -->
+            <a id="rsvpLink">RSVP</a>
         </div>
     </div>
+    <div class="container">
+        <div class="vertical-line"></div>
+    </div>
+
+    <!-- scroll down to rsvp -->
+    <div class="info" id="rsvpBox">
+        <p>Enter your first and second name:</p>
+    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-default"></span>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    </div>
+    
+
+    <script>
+        const rsvpButton = document.getElementById('rsvpLink');
+        const rsvpBox = document.getElementById('rsvpBox');
+
+        rsvpButton.addEventListener('click', () => {
+            rsvpBox.style.display = 'block'; // show the box
+            rsvpBox.scrollIntoView({ behavior: 'smooth' }); // smooth scroll
+        });
+    </script>
 
 
     <!-- footer -->

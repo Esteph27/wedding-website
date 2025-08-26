@@ -75,11 +75,15 @@ footer {
     text-transform: none;
 }
 
-#rsvpButton {
+#rsvpLink {
     font-family: "Antic Didone", serif;
-    font-size: 36px;
+    font-size: 40px;
     font-weight: 100;
     letter-spacing: 3px;
+}
+
+#rsvpBox {
+    padding-bottom: 0;
 }
 
 /* classes */
@@ -145,4 +149,18 @@ footer {
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 4px;
+}
+
+.form-control {
+    font-family: "Antic Didone", serif;
+    font-size: 20px;
+    font-weight: 100;
+    text-align: center;
+    border: none;
+}
+
+.form-control:focus {
+    outline: none;
+    box-shadow: 0 0 5px #aaa;
+    border: 1px solid #aaa; 
 }
