@@ -75,14 +75,14 @@ footer {
     text-transform: none;
 }
 
-#rsvpLink {
+#link {
     font-family: "Antic Didone", serif;
     font-size: 40px;
     font-weight: 100;
     letter-spacing: 3px;
 }
 
-#rsvpBox {
+#target {
     padding-bottom: 0;
 }
 

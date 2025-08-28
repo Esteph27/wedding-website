@@ -1,8 +1,8 @@
 
-const rsvpButton = document.getElementById('rsvpLink');
-const rsvpBox = document.getElementById('rsvpBox');
+const link = document.getElementById('link');
+const target = document.getElementById('target');
 
-rsvpButton.addEventListener('click', () => {
-    rsvpBox.style.display = 'block'; // show the box
-    rsvpBox.scrollIntoView({ behavior: 'smooth' }); // smooth scroll
+link.addEventListener('click', () => {
+    target.style.display = 'block'; // show the box
+    target.scrollIntoView({ behavior: 'smooth' }); // smooth scroll
 });
