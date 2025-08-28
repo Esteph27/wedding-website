@@ -86,6 +86,27 @@ footer {
     padding-bottom: 0;
 }
 
+#date {
+    font-family: "Antic Didone", serif;
+    font-size: 24px;
+    font-weight: 100;
+}
+
+#date h2 {
+    font-family: "Monsieur La Doulaise", cursive;
+    letter-spacing: 3px;
+    font-weight: 100;
+    font-size: 40px;
+}
+
+#guest-name h2{
+    font-family: "Monsieur La Doulaise", cursive;
+    font-weight: 100;
+    letter-spacing: 3px;
+    font-size: 48px;
+    margin-bottom: 0;
+}
+
 /* classes */
 .container {
     display: flex;
@@ -101,26 +122,13 @@ footer {
     background-color: white;
 }
 
-.date {
-    font-family: "Antic Didone", serif;
-    font-size: 24px;
-    font-weight: 100;
-}
-
-.date h2 {
-    font-family: "Monsieur La Doulaise", cursive;
-    letter-spacing: 3px;
-    font-weight: 200;
-    font-size: 40px;
-}
-
-.cta-link {
+.page-link {
     letter-spacing: 3px;
     font-size: 30px;
     font-family: "Antic Didone", serif;
 }
   
-.cta-link:hover {
+.page-link:hover {
     transform: scale(1.05);
 }
 
@@ -143,15 +151,6 @@ footer {
 .info a {
     font-size: 20px;
     letter-spacing: 0;
-}
-
-.info h2 {
-    font-family: "Monsieur La Doulaise", cursive;
-    letter-spacing: 3px;
-    font-weight: 200;
-    font-size: 48px;
-    margin-bottom: 0;
-    margin-top: 0;
 }
 
 .underline {
