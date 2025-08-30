@@ -73,15 +73,18 @@ button:hover {
 
 /* Ids */
 #countdown {
-    font-size: 40px;
+    font-size: 36px;
     letter-spacing: 3px;
     font-weight: 100;
     font-family: "Antic Didone", cursive;
     margin-top: 15px;
+     margin-bottom: 15px;
 }
 
 #title {
     padding-top: 80px;
+    font-weight: 100;
+    letter-spacing: 3px;
 }
 
 #initials {
@@ -103,15 +106,9 @@ button:hover {
 
 #date {
     font-family: "Antic Didone", serif;
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 100;
-}
-
-#date h2 {
-    font-family: "Monsieur La Doulaise", cursive;
-    letter-spacing: 3px;
-    font-weight: 100;
-    font-size: 40px;
+    margin-bottom: 20px;
 }
 
 #guest-name h2{
@@ -123,23 +120,23 @@ button:hover {
 }
 
 #passwordInput {
-      width: 100%;
-      border: none;
-      background: none;
-      color: white;
-      text-align: center;
-      font-size: 22px;
-      font-family: "Noto Serif Display", serif;
+    width: 100%;
+    border: none;
+    background: none;
+    color: white;
+    text-align: center;
+    font-size: 22px;
+    font-family: "Noto Serif Display", serif;
 }
 
 #passwordInput::placeholder {
-      color: #ddd;
+    color: #ddd;
 }
 
 #passwordInput:focus {
-      outline: none; 
-      box-shadow: 0 #aaa;
-      border-bottom: 1px solid #aaa; 
+    outline: none; 
+    box-shadow: 0 #aaa;
+    border-bottom: 1px solid #aaa; 
 }
 
 #capitals {
@@ -151,10 +148,19 @@ button:hover {
 }
 
 #error {
-      color: #FFC3C3;
-      display: none;
-      margin-top: 20px;
-      font-size: 14px;
+    color: #FFC3C3;
+    display: none;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+#welcome {
+    font-family: "Antic Didone", serif;
+    letter-spacing: 8px;
+    font-size: 20px;
+    margin-top: 3rem;
+    font-weight: 100;
+    color: white;
 }
 
 /* classes */
@@ -192,6 +198,7 @@ button:hover {
   
 .page-link:hover {
     transform: scale(1.05);
+    text-shadow: 0 0 8px #fff, 0 0 16px #aaa;
 }
 
 .small-text {
