@@ -1,87 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Estephanie & David - Wedding</title>
+  <meta charset="UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Our Wedding</title>
 
   <!-- Google font-->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Antic+Didone&family=Monsieur+La+Doulaise&display=swap" rel="stylesheet">
-  
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Antic+Didone&family=Monsieur+La+Doulaise&family=Noto+Serif+Display:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
   <!-- Link to external CSS -->
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- light safegaurd to prevent search engines from indexing -->
+  <meta name="robots" content="noindex, nofollow">
+
 </head>
 <body>
-
-    <!-- title -->
-    <h1 id="title">Estephanie & David</h1>
-    <div class="container">
-        <div class="vertical-line"></div>
-    </div>
-
-    <!-- count down time -->
-    <div id="countdown"></div>
-    <div class="container">
-        <div class="vertical-line"></div>
-    </div>
-    
-    <!-- date and address -->
-    <div id="date">
-        <h2>The Wedding Day</h2>
-        <p>Saturday 12th September, 2026</p>
-        <a href="https://ripplecourtestate.co.uk/" target="_blank">Ripple Court Estate, Kent, Deal, UK</a>
-    </div>
-    <div class="container">
-        <div class="vertical-line"></div>
-    </div>
-
-    <!-- RSVP section -->
-    <div class="container">
-        <a href="rsvp.html" class="page-link target="_blank">RSVP</a>
-    </div>
-    <div class="container">
-        <div class="vertical-line"></div>
-    </div>
-
-    <!-- Schedule-->
-    <div class="container">
-        <a class="page-link">Schedule</a>
-    </div>
-    <div class="container">
-        <div class="vertical-line"></div>
-    </div>
-
-    <!-- Travel and accommodation section -->
-    <div class="container">
-        <a href="travel.html" class="page-link" target="_blank">Travel & Accommodation</a>
-    </div>
-    <div class="container">
-        <div class="vertical-line"></div>
-    </div>
-
-    <!-- Dress Code -->
-    <div class="container">
-        <a class="page-link">Dress Code</a>
-    </div>
-    <div class="container">
-        <div class="vertical-line"></div>
-    </div>
-
-
-    <!-- footer -->
-    <footer class="container">
-        <div id="initials">E & D</div>
-        <div class="small-text">
-            <p>12.09.2026</p>
-            <br>
-            <p>Created by us</p>
-            <p>x</p>
+    <div class="container-centre">
+        <div class="div-item">
+            <h1 id="capitals">WELCOME</h1>
+            <hr class="horizontal-line">
+            <p class="info">Please enter the password:</p>
+            <input type="password" id="passwordInput" placeholder="...">
+            <button onclick="checkPassword()">Enter</button>
+            <p class="info" id="error">Incorrect password. Try again.</p>
         </div>
-    </footer>
+    </div>
 
-    <!-- Countdown Script -->
-    <script src="js/countdown.js"></script>
+   <!-- authenticate access -->
+    <script src="js/authenticate.js"></script>
 </body>
 </html>
