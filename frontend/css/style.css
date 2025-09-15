@@ -87,6 +87,7 @@ button:hover {
     margin-top: 15px;
     margin-bottom: 50px;
     color: black;
+    text-transform: none; /* added to stop capitalisation of 1st letters in prod */
 }
 
 #title {
