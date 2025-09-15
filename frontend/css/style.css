@@ -91,7 +91,7 @@ button:hover {
 
 #title {
     font-weight: 100;
-    letter-spacing: 15px;
+    letter-spacing: 10px;
     font-size: 35px;
     margin-top: 200px;
     margin-bottom: 20px;
@@ -105,9 +105,15 @@ button:hover {
 
 #link {
     font-family: "Bodoni Moda", serif;
-    font-size: 40px;
+    font-size: 36px;
     font-weight: 100;
     letter-spacing: 3px;
+    position: relative;
+}
+
+#link:hover {
+    transform: scale(1.05);
+    text-shadow: 0 0 8px #fff, 0 0 16px #aaa;
 }
 
 #target {
