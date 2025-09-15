@@ -23,7 +23,7 @@ body {
 }
 
 h1 {
-    font-family: 'Monsieur La Doulaise', cursive;
+    font-family: "Bodoni Moda", serif;
     letter-spacing: 3px;
     font-size: 64px;
     font-weight: 100;
@@ -32,11 +32,17 @@ h1 {
 }
 
 p {
-    color: white;
+    font-family: "Bodoni Moda", serif;
+    letter-spacing: 3px;
+    font-size: 16px;
+    color: black;
 }
 
 a {
-    color: white; 
+    font-family: "Bodoni Moda", serif;
+    letter-spacing: 3px;
+    color: black;
+    font-size: 16px;
     text-decoration: none;
 }
   
@@ -74,18 +80,21 @@ button:hover {
 
 /* Ids */
 #countdown {
-    font-size: 36px;
+    font-size: 40px;
     letter-spacing: 3px;
     font-weight: 100;
-    font-family: "Antic Didone", cursive;
+    font-family: "Monsieur La Doulaise", cursive;
     margin-top: 15px;
-     margin-bottom: 15px;
+    margin-bottom: 50px;
+    color: black;
 }
 
 #title {
-    padding-top: 80px;
     font-weight: 100;
-    letter-spacing: 3px;
+    letter-spacing: 15px;
+    font-size: 35px;
+    margin-top: 200px;
+    margin-bottom: 20px;
 }
 
 #initials {
@@ -95,7 +104,7 @@ button:hover {
 }
 
 #link {
-    font-family: "Antic Didone", serif;
+    font-family: "Bodoni Moda", serif;
     font-size: 40px;
     font-weight: 100;
     letter-spacing: 3px;
@@ -103,13 +112,6 @@ button:hover {
 
 #target {
     padding-bottom: 0;
-}
-
-#date {
-    font-family: "Antic Didone", serif;
-    font-size: 22px;
-    font-weight: 100;
-    margin-bottom: 20px;
 }
 
 #guest-name h2{
@@ -156,35 +158,44 @@ button:hover {
     font-size: 14px;
 }
 
-#welcome {
-    font-family: "Antic Didone", serif;
-    letter-spacing: 8px;
-    font-size: 20px;
-    margin-top: 3rem;
-    font-weight: 100;
-    color: white;
-}
-
 /* classes */
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;   
-    padding: 20px 0px 20px;
+.height {
+    height: 100vh;
 }
 
-.container-centre {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+.space {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  flex-wrap: wrap; /* lets content wrap when needed */
+}
+
+
+.three-divs-container {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.div-item {
+  min-width: 80px;
+  color: black;
+  font-family: "Monsieur La Doulaise", cursive;
+  letter-spacing: 3px;
+  font-size: 40px;
+  justify-content: center;
 }
 
 .vertical-line {
     width: 1.5px;             
     height: 100px;
-    background-color: white;
+    background-color: black;
 }
 
 .horizontal-line {
@@ -194,8 +205,8 @@ button:hover {
 
 .page-link {
     letter-spacing: 3px;
-    font-size: 30px;
-    font-family: "Antic Didone", serif;
+    font-size: 26px;
+    font-family: "Bodoni Moda", serif;
 }
   
 .page-link:hover {
@@ -204,7 +215,7 @@ button:hover {
 }
 
 .small-text {
-    font-family: "Antic Didone", serif;
+    font-family:"Bodoni Moda", serif;
     font-size: 16px;
     font-weight: 100;
     padding-top: 10px;
@@ -245,21 +256,18 @@ button:hover {
     border: 1px solid #aaa; 
 }
 
-.three-divs-container {
-  display: flex;
-  justify-content: center;
-  margin: 40px 0;
-}
-
-.div-item {
-  min-width: 80px;
-  color: white;
-  font-family: "Monsieur La Doulaise", cursive;
-  letter-spacing: 3px;
-  font-size: 40px;
-  justify-content: center;
-}
-
 .glow a:hover {
     text-shadow: 0 0 8px #fff, 0 0 16px #aaa;
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .container .space {
+    display: none;
+  }
 }
