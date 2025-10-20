@@ -31,7 +31,7 @@ h1 {
     letter-spacing: 3px;
     font-size: 64px;
     font-weight: 100;
-    color: black;
+    color: #2A343D;
     white-space: normal;
 }
 
@@ -39,13 +39,13 @@ p {
     font-family: "Bodoni Moda", serif;
     letter-spacing: 3px;
     font-size: 16px;
-    color: black;
+    color: #2A343D;
 }
 
 a {
     font-family: "Bodoni Moda", serif;
     letter-spacing: 3px;
-    color: black;
+    color: #2A343D;
     font-size: 16px;
     text-decoration: none;
 }
@@ -55,7 +55,7 @@ footer {
     margin-top: 60px;
     margin-bottom: 60px;
     font-size: 48px;
-    color: #aaa;
+    color: #5F6265;
     display: flex;
     flex-direction: column; 
     align-items: center;
@@ -81,7 +81,6 @@ footer {
   flex-wrap: wrap; /* lets content wrap when needed */
 }
 
-
 .three-divs-container {
   display: flex;
   justify-content: center;
@@ -100,7 +99,7 @@ footer {
 .vertical-line {
     width: 1.5px;             
     height: 100px;
-    background-color: black;
+    background-color: #2A343D;
 }
 
 .horizontal-line {
@@ -141,12 +140,18 @@ footer {
   transform: translateX(-50%) scaleX(1);
 }
 
+.doc-link:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px; 
+}
 
 .small-text {
     font-family:"Bodoni Moda", serif;
     font-size: 16px;
     font-weight: 100;
     padding-top: 10px;
+    color: #2A343D;
 }
 
 .info {
@@ -301,17 +306,47 @@ button:hover::after {
     font-family: "Monsieur La Doulaise", cursive;
     margin-top: 15px;
     margin-bottom: 50px;
-    color: black;
+    color: #2A343D;
     text-transform: none; /* added to stop capitalisation of 1st letters in prod */
+    opacity: 0;
+    transform: translateY(10px);
+    animation: countdownReveal 1.8s ease-out forwards;
+    animation-delay: 1.8s; /* starts after the title fades in */
 }
 
-#title {
-    font-weight: 100;
-    letter-spacing: 10px;
-    font-size: 35px;
-    margin-top: 200px;
-    margin-bottom: 20px;
+#title { 
+  font-size: 35px;
+  letter-spacing: 20px;
+  color: #2A343D;
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1.8s ease-out forwards;
 }
+
+.fade {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInSubtle 1.5s ease-out forwards;
+}
+
+/* Delay classes — you can adjust timing to speed up or slow down */
+.delay-1  { animation-delay: 0.5s; }
+.delay-2  { animation-delay: 1s; }
+.delay-3  { animation-delay: 1.4s; }
+.delay-4  { animation-delay: 1.8s; }
+.delay-5  { animation-delay: 2.2s; }
+.delay-6  { animation-delay: 2.6s; }
+.delay-7  { animation-delay: 3s; }
+.delay-8  { animation-delay: 3.4s; }
+.delay-9  { animation-delay: 3.8s; }
+.delay-10 { animation-delay: 4.2s; }
+.delay-11 { animation-delay: 4.6s; }
+.delay-12 { animation-delay: 5s; }
+.delay-13 { animation-delay: 5.4s; }
+.delay-14 { animation-delay: 5.8s; }
 
 /* ================================
    Animations
@@ -340,6 +375,31 @@ button:hover::after {
   }
 }
 
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+    letter-spacing: 28px;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    letter-spacing: 20px;
+  }
+}
+
+@keyframes countdownReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+    letter-spacing: 8px;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    letter-spacing: 3px;
+  }
+}
 /* ================================
    RSVP
 ================================ */
