@@ -15,6 +15,193 @@
 }
 
 /* ================================
+   Base elements
+================================ */
+body {
+  margin: 0;
+  padding: 0 20px;
+  font-family:  "Bodoni Moda", serif;
+  color: white;
+  text-align: center;
+  background: white;
+}
+
+h1 {
+    font-family: "Bodoni Moda", serif;
+    letter-spacing: 3px;
+    font-size: 64px;
+    font-weight: 100;
+    color: black;
+    white-space: normal;
+}
+
+p {
+    font-family: "Bodoni Moda", serif;
+    letter-spacing: 3px;
+    font-size: 16px;
+    color: black;
+}
+
+a {
+    font-family: "Bodoni Moda", serif;
+    letter-spacing: 3px;
+    color: black;
+    font-size: 16px;
+    text-decoration: none;
+}
+  
+footer {
+    font-family: 'Monsieur La Doulaise', cursive;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    font-size: 48px;
+    color: #aaa;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+}
+
+/* ================================
+   Reusable elements
+================================ */
+.height {
+    height: 100vh;
+}
+
+.space {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  flex-wrap: wrap; /* lets content wrap when needed */
+}
+
+
+.three-divs-container {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+.div-item {
+  min-width: 80px;
+  color: black;
+  font-family: "Monsieur La Doulaise", cursive;
+  letter-spacing: 3px;
+  font-size: 40px;
+  justify-content: center;
+}
+
+.vertical-line {
+    width: 1.5px;             
+    height: 100px;
+    background-color: black;
+}
+
+.horizontal-line {
+  border: none;
+  border-top: 1px solid #aaa;
+}
+
+.page-link {
+  position: relative;
+  display: inline-block;
+  letter-spacing: 3px;
+  font-size: 26px;
+  font-family: "Bodoni Moda", serif;
+  color: var(--color-text, black);
+  text-decoration: none;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.page-link::after {
+  content: "";
+  position: absolute;
+  bottom: -4px; /* distance below the text */
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  width: 60%;
+  height: 1px;
+  background-color: var(--color-primary, #2A343D);
+  transition: transform 0.4s ease;
+}
+
+.page-link:hover {
+  transform: scale(1.05);
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+}
+
+.page-link:hover::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+
+.small-text {
+    font-family:"Bodoni Moda", serif;
+    font-size: 16px;
+    font-weight: 100;
+    padding-top: 10px;
+}
+
+.info {
+    font-family: "Bodoni Moda", serif;
+    font-size: 20px;
+    font-weight: 100;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    color: black;
+}
+
+.info a {
+    font-size: 20px;
+    letter-spacing: 0;
+}
+
+.underline {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+#initials {
+    border-bottom: 1px solid #aaa;
+    padding-top: 0 18px 16px;
+    text-transform: none;
+}
+
+#link {
+    font-family: "Bodoni Moda", serif;
+    font-size: 36px;
+    font-weight: 100;
+    letter-spacing: 3px;
+    position: relative;
+}
+
+#link:hover {
+    transform: scale(1.05);
+    text-shadow: 0 0 8px #fff, 0 0 16px #aaa;
+}
+
+#target {
+    padding-bottom: 0;
+}
+
+#guest-name h2{
+    font-family: "Monsieur La Doulaise", cursive;
+    font-weight: 100;
+    letter-spacing: 5px;
+    font-size: 48px;
+    margin-bottom: 0;
+}
+
+/* ================================
    Welcome page elements
 ================================ */
 #capitals {
@@ -105,6 +292,28 @@ button:hover::after {
 }
 
 /* ================================
+   Home page
+================================ */
+#countdown {
+    font-size: 40px;
+    letter-spacing: 3px;
+    font-weight: 100;
+    font-family: "Monsieur La Doulaise", cursive;
+    margin-top: 15px;
+    margin-bottom: 50px;
+    color: black;
+    text-transform: none; /* added to stop capitalisation of 1st letters in prod */
+}
+
+#title {
+    font-weight: 100;
+    letter-spacing: 10px;
+    font-size: 35px;
+    margin-top: 200px;
+    margin-bottom: 20px;
+}
+
+/* ================================
    Animations
 ================================ */
 @keyframes elegantIntro {
@@ -131,199 +340,9 @@ button:hover::after {
   }
 }
 
-
 /* ================================
-   TODO - REFACTOR THE FOLLOWING CSS 
+   RSVP
 ================================ */
-/* elements */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    color: white;
-    text-align: center;
-    padding: 0 20px;
-    background: white;
-}
-
-h1 {
-    font-family: "Bodoni Moda", serif;
-    letter-spacing: 3px;
-    font-size: 64px;
-    font-weight: 100;
-    color: black;
-    white-space: normal;
-}
-
-p {
-    font-family: "Bodoni Moda", serif;
-    letter-spacing: 3px;
-    font-size: 16px;
-    color: black;
-}
-
-a {
-    font-family: "Bodoni Moda", serif;
-    letter-spacing: 3px;
-    color: black;
-    font-size: 16px;
-    text-decoration: none;
-}
-  
-a:hover {
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 4px; 
-}
-  
-footer {
-    font-family: 'Monsieur La Doulaise', cursive;
-    margin-top: 60px;
-    margin-bottom: 60px;
-    font-size: 48px;
-    color: #aaa;
-    display: flex;
-    flex-direction: column; 
-    align-items: center;
-}
-
-
-/* Ids */
-#countdown {
-    font-size: 40px;
-    letter-spacing: 3px;
-    font-weight: 100;
-    font-family: "Monsieur La Doulaise", cursive;
-    margin-top: 15px;
-    margin-bottom: 50px;
-    color: black;
-    text-transform: none; /* added to stop capitalisation of 1st letters in prod */
-}
-
-#title {
-    font-weight: 100;
-    letter-spacing: 10px;
-    font-size: 35px;
-    margin-top: 200px;
-    margin-bottom: 20px;
-}
-
-#initials {
-    border-bottom: 1px solid #aaa;
-    padding-top: 0 18px 16px;
-    text-transform: none;
-}
-
-#link {
-    font-family: "Bodoni Moda", serif;
-    font-size: 36px;
-    font-weight: 100;
-    letter-spacing: 3px;
-    position: relative;
-}
-
-#link:hover {
-    transform: scale(1.05);
-    text-shadow: 0 0 8px #fff, 0 0 16px #aaa;
-}
-
-#target {
-    padding-bottom: 0;
-}
-
-#guest-name h2{
-    font-family: "Monsieur La Doulaise", cursive;
-    font-weight: 100;
-    letter-spacing: 5px;
-    font-size: 48px;
-    margin-bottom: 0;
-}
-
-
-
-/* classes */
-.height {
-    height: 100vh;
-}
-
-.space {
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px 0;
-  flex-wrap: wrap; /* lets content wrap when needed */
-}
-
-
-.three-divs-container {
-  display: flex;
-  justify-content: center;
-  margin: 40px 0;
-}
-
-.div-item {
-  min-width: 80px;
-  color: black;
-  font-family: "Monsieur La Doulaise", cursive;
-  letter-spacing: 3px;
-  font-size: 40px;
-  justify-content: center;
-}
-
-.vertical-line {
-    width: 1.5px;             
-    height: 100px;
-    background-color: black;
-}
-
-.horizontal-line {
-  border: none;
-  border-top: 1px solid #aaa;
-}
-
-.page-link {
-    letter-spacing: 3px;
-    font-size: 26px;
-    font-family: "Bodoni Moda", serif;
-}
-  
-.page-link:hover {
-    transform: scale(1.05);
-    text-shadow: 0 0 8px #fff, 0 0 16px #aaa;
-}
-
-.small-text {
-    font-family:"Bodoni Moda", serif;
-    font-size: 16px;
-    font-weight: 100;
-    padding-top: 10px;
-}
-
-.info {
-    font-family: "Bodoni Moda", serif;
-    font-size: 20px;
-    font-weight: 100;
-    margin: 20px;
-    display: flex;
-    justify-content: center;
-    color: black;
-}
-
-.info a {
-    font-size: 20px;
-    letter-spacing: 0;
-}
-
-.underline {
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 4px;
-}
-
 .form-control {
     font-family: "Antic Didone", serif;
     font-size: 20px;
@@ -338,11 +357,9 @@ footer {
     border: 1px solid #aaa; 
 }
 
-.glow a:hover {
-    text-shadow: 0 0 8px #fff, 0 0 16px #aaa;
-}
-
-/* Media queries */
+/* ================================
+   Media queries
+================================ */
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
