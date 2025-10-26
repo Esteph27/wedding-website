@@ -1,20 +1,4 @@
 /* ================================
-   Google fonts
-================================ */
-.monsieur-la-doulaise-regular {
-    font-family: "Monsieur La Doulaise", cursive;
-    font-style: normal;
-    font-weight: 100;
-}
-
-.bodoni-moda {
-  font-family: "Bodoni Moda", serif;
-  font-optical-sizing: auto;
-  font-weight: 100;
-  font-style: normal;
-}
-
-/* ================================
    Base elements
 ================================ */
 body {
@@ -210,14 +194,16 @@ footer {
    Welcome page elements
 ================================ */
 #capitals {
+  display: inline-block;
   font-family: "Bodoni Moda", serif;
   font-size: 40px;
   font-weight: 300;
-  letter-spacing: 40px;
+  letter-spacing: 20px;
   color: #2A343D;
   opacity: 0;
-  transform: translateY(20px);
-  animation: elegantIntro 2.5s ease-out forwards;
+  transform: scaleX(1.3) translateY(20px);
+  transform-origin: center; /* ensures it expands evenly from the middle */
+  animation: expandIn 2.5s ease-out forwards;
 }
 
 #passwordInput {
@@ -351,19 +337,16 @@ button:hover::after {
 /* ================================
    Animations
 ================================ */
-@keyframes elegantIntro {
+@keyframes expandIn {
   0% {
     opacity: 0;
-    letter-spacing: 60px;
-    transform: translateY(30px);
+    transform: scaleX(1.4) translateY(30px);
   }
   100% {
     opacity: 1;
-    letter-spacing: 20px;
-    transform: translateY(0);
+    transform: scaleX(1) translateY(0);
   }
 }
-
 @keyframes fadeInSubtle {
   from {
     opacity: 0;
@@ -429,4 +412,23 @@ button:hover::after {
   .container .space {
     display: none;
   }
+
+  /* welcome page */
+  #capitals {
+    font-size: 38px;          /* slightly smaller text for mobile */
+    letter-spacing: 12px;     /* tighter spacing looks better on narrow screens */
+    animation: expandInMobile 2s ease-out forwards;
+  }
+
+  @keyframes expandInMobile {
+    0% {
+      opacity: 0;
+      transform: scaleX(1.3) translateY(25px);
+    }
+    100% {
+      opacity: 1;
+      transform: scaleX(1) translateY(0);
+    }
+  }
 }
+
