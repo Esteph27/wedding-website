@@ -1,5 +1,5 @@
 
-const link = document.getElementById('link');
+const link = document.getElementById('scroll-down-link');
 const target = document.getElementById('target');
 
 link.addEventListener('click', () => {

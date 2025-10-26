@@ -73,7 +73,7 @@ footer {
 
 .div-item {
   min-width: 80px;
-  color: black;
+  color: #2A343D;
   font-family: "Monsieur La Doulaise", cursive;
   letter-spacing: 3px;
   font-size: 40px;
@@ -97,7 +97,7 @@ footer {
   letter-spacing: 3px;
   font-size: 26px;
   font-family: "Bodoni Moda", serif;
-  color: var(--color-text, black);
+  color: #2A343D;
   text-decoration: none;
   transition: transform 0.3s ease, text-shadow 0.3s ease;
 }
@@ -111,13 +111,12 @@ footer {
   transform-origin: center;
   width: 60%;
   height: 1px;
-  background-color: var(--color-primary, #2A343D);
+  background-color: #2A343D;
   transition: transform 0.4s ease;
 }
 
 .page-link:hover {
   transform: scale(1.05);
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
 }
 
 .page-link:hover::after {
@@ -163,31 +162,6 @@ footer {
     border-bottom: 1px solid #aaa;
     padding-top: 0 18px 16px;
     text-transform: none;
-}
-
-#link {
-    font-family: "Bodoni Moda", serif;
-    font-size: 36px;
-    font-weight: 100;
-    letter-spacing: 3px;
-    position: relative;
-}
-
-#link:hover {
-    transform: scale(1.05);
-    text-shadow: 0 0 8px #fff, 0 0 16px #aaa;
-}
-
-#target {
-    padding-bottom: 0;
-}
-
-#guest-name h2{
-    font-family: "Monsieur La Doulaise", cursive;
-    font-weight: 100;
-    letter-spacing: 5px;
-    font-size: 48px;
-    margin-bottom: 0;
 }
 
 /* ================================
@@ -320,6 +294,21 @@ button:hover::after {
 .delay-12 { animation-delay: 5s; }
 .delay-13 { animation-delay: 5.4s; }
 .delay-14 { animation-delay: 5.8s; }
+
+/* ================================
+   RSVP page
+================================ */
+#target {
+    padding-bottom: 0;
+}
+
+#guest-name h2{
+    font-family: "Monsieur La Doulaise", cursive;
+    font-weight: 100;
+    letter-spacing: 5px;
+    font-size: 48px;
+    margin-bottom: 0;
+}
 
 /* ================================
    Animations
