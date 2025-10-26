@@ -56,38 +56,54 @@
         <div class="vertical-line"></div>
     </div>
 
-    <!-- Guest name -->
-    <div class="info" id="target">
-        <p>Enter your first and second name:</p>
-    </div>
-    <div class="input-group">
-        <span class="input-group-text" id="inputGroup-sizing-default"></span>
-        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-    </div>
+    <!-- RSVP form -->
+    <div id="target" class="rsvp-container">
+        <form id="rsvpForm" action="https://formspree.io/f/xblplddd" method="POST">
+            <!-- guest name -->
+            <label for="name">Enter Your Name</label>
+            <input type="text" id="name" name="name" placeholder="First and Second Name" required>
+            
+            <!-- attendance -->
+            <label for="attending">Will you be attending?</label>
+            <select id="attending" name="attending" required>
+                <option value="" didabled selected>Select</option>
+                <option values="yes">Yes</option>
+                <option value="no">No</option>
+            </select>
 
-    <!-- RSVP Functionality -->
-    <div class="container">
-        <div class="vertical-line"></div>
-    </div>
-    <div class="info">
-        <div id="guest-name">
-            <h2>Welcome Estephanie!</h2>
-        </div>
-    </div>
-    <div class="info">
-        <div>
-            <p>You're on the guest list as a <span class="underline">Day Guest</span>.</p>
-            <p>Will you be attending?</p>
-        </div>
-    </div>
-    <div class="three-divs-container">
-        <div class="div-item glow"><a>Yes</a></div>
-        <div class="div-item">|</div>
-        <div class="div-item glow"><a>No</a></div>
+            <!-- dietry requirements -->
+            <label for="dietry">Dietry Requirements</label>
+            <select id="dietry" name="dietry" required>
+                <option value="" disabled selected>Select</option>
+                <option value="none">None</option>
+                <option value="vegetarian">Vegetarian</option>
+                <option value="gluten-free">Gluten-Free</option>
+                <option value="vegan">Vegan</option>
+                <option value="other">Other</option>
+            </select>
+
+            <!-- message-->
+            <label for="message">Message for the Couple / Song Request</label>
+            <textarea id="message" name="message" placeholder="Optional"></textarea>
+
+            <!-- submit -->
+            <button type="submit">Submit</button>
+        </form>
+
+        <!-- post submission options -->
+         <div id="postRsvpOptions" style="display:none; margin-top: 20px;">
+            <h3>Thank you!</h3>
+            <p class="info">Your RSVP has been sent.</p>
+            <button id="rsvpAnother" class="secondary-button">RSVP for someone else?</button>
+            <a href="index.html" class="secondary-button">Retrun Home</a>
+         </div>
     </div>
 
     <!-- scroll down to rsvp -->
     <script src="js/scrolldown.js"></script>
+
+    <!-- RSVP JS -->
+    <script src="js/rsvp.js"></script>
 
     <!-- footer -->
     <footer class="container">

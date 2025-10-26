@@ -299,15 +299,89 @@ button:hover::after {
    RSVP page
 ================================ */
 #target {
-    padding-bottom: 0;
+  padding-bottom: 0;
 }
 
-#guest-name h2{
-    font-family: "Monsieur La Doulaise", cursive;
-    font-weight: 100;
-    letter-spacing: 5px;
-    font-size: 48px;
-    margin-bottom: 0;
+.rsvp-container {
+  max-width: 500px;
+  width: 90%;
+  margin: 50px auto 80px auto;
+  font-family: "Bodoni Moda", serif;
+  text-align: center;
+  letter-spacing: 2px;
+  color: #2A343D;
+}
+
+#rsvpForm input,
+#rsvpForm select,
+#rsvpForm textarea {
+  width: 100%;
+  box-sizing: border-box; 
+  padding: 12px 15px;
+  margin-top: 5px;
+  margin-bottom: 30px;
+  font-family: "Bodoni Moda", serif;
+  font-size: 18px;
+  border: 1px solid #2A343D;
+  border-radius: 6px;
+  outline: none;
+  text-align: center;
+}
+
+#rsvpForm textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+#rsvpForm input:focus,
+#rsvpForm select:focus,
+#rsvpForm textarea:focus {
+  border-color: #2A343D;
+  box-shadow: 0 0 8px rgba(42, 52, 61, 0.2);
+}
+
+#rsvpForm button {
+  font-family: "Bodoni Moda", serif;
+  font-size: 20px;
+  color: #2A343D;
+  border: none;
+  background-color: transparent;
+  padding: 12px 40px;
+  margin-top: 20px;
+  letter-spacing: 4px;
+  cursor: pointer;
+}
+
+#rsvpForm button:hover {
+  transform: scale(1.05);
+}
+
+#rsvp-success {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #2A343D;
+}
+
+.secondary-button {
+  font-family: "Monsieur La Doulaise", cursive;
+  font-size: 28px;
+  color: #2A343D;
+  background: transparent;
+  border: 1px solid #2A343D;
+  border-radius: 50px;
+  padding: 10px 30px;
+  margin: 10px;
+  letter-spacing: 3px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.secondary-button:hover {
+  background-color: #2A343D;
+  color: #fff;
+  transform: scale(1.05);
 }
 
 /* ================================
