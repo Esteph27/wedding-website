@@ -9,8 +9,8 @@
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Monsieur+La+Doulaise&display=swap" rel="stylesheet">
-  
-  <!-- Link to external CSS -->
+   
+   <!-- Link to external CSS -->
   <link rel="stylesheet" href="css/style.css">
   
   <!-- light safegaurd to prevent search engines from indexing -->
@@ -18,7 +18,7 @@
 </head>
 <body>
     <!-- title -->
-    <h1 id="title" class="fade delay-1">ESTEPHANIE & DAVID</h1>
+    <h1 class="title fade delay-1">ESTEPHANIE & DAVID</h1>
 
     <div class="container fade delay-2">
         <p>SATURDAY 12TH SEPTEMBER 2026</p>
@@ -83,5 +83,24 @@
 
     <!-- Countdown Script -->
     <script src="js/countdown.js"></script>
+
+    <!-- script to play animation only once per browser session -->
+     <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const hasVisited = sessionStorage.getItem("hasVisitedHome");
+
+            if (hasVisited) {
+            // user has already visited this session — skip animations
+            document.querySelectorAll('.fade').forEach(el => {
+                el.style.opacity = "1";
+                el.style.transform = "none";
+                el.style.animation = "none";
+            });
+            } else {
+            // first visit — let animations play
+            sessionStorage.setItem("hasVisitedHome", "true");
+            }
+        });
+    </script>
 </body>
 </html>

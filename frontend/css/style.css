@@ -193,7 +193,7 @@ footer {
 /* ================================
    Welcome page elements
 ================================ */
-#capitals {
+.title {
   display: inline-block;
   font-family: "Bodoni Moda", serif;
   font-size: 40px;
@@ -300,25 +300,12 @@ button:hover::after {
     animation-delay: 1.8s; /* starts after the title fades in */
 }
 
-#title { 
-  font-size: 35px;
-  letter-spacing: 20px;
-  color: #2A343D;
-  text-align: center;
-  margin-top: 40px;
-  margin-bottom: 20px;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeUp 1.8s ease-out forwards;
-}
-
 .fade {
   opacity: 0;
   transform: translateY(10px);
   animation: fadeInSubtle 1.5s ease-out forwards;
 }
 
-/* Delay classes — you can adjust timing to speed up or slow down */
 .delay-1  { animation-delay: 0.5s; }
 .delay-2  { animation-delay: 1s; }
 .delay-3  { animation-delay: 1.4s; }
@@ -414,7 +401,7 @@ button:hover::after {
   }
 
   /* welcome page */
-  #capitals {
+  .title {
     font-size: 38px;          /* slightly smaller text for mobile */
     letter-spacing: 12px;     /* tighter spacing looks better on narrow screens */
     animation: expandInMobile 2s ease-out forwards;
