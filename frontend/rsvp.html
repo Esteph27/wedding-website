@@ -67,11 +67,11 @@
             <label for="attending">Will you be attending?</label>
             <select id="attending" name="attending" required>
                 <option value="" didabled selected>Select</option>
-                <option values="yes">Yes</option>
+                <option value="yes">Yes</option>
                 <option value="no">No</option>
             </select>
 
-            <!-- Hide field unless 'yes' is selected -->
+            <!-- hide field unless 'yes' is selected -->
             <div id="guestAttending" class="hidden-section">
                 <!-- dietry requirements -->
                 <label for="dietry">Dietry Requirements</label>
@@ -84,7 +84,7 @@
                     <option value="other">Other</option>
                 </select>
 
-                <!-- Hidden text box appears only if "Other" is chosen -->
+                <!-- hidden text box appears only if "Other" is chosen -->
                 <div id="otherDietContainer" class="hidden-section">
                     <label for="otherDiet">Please specify:</label>
                     <input
@@ -98,15 +98,15 @@
                 <!-- message-->
                 <label for="message">Message for the Couple / Song Request</label>
                 <textarea id="message" name="message" placeholder="Optional"></textarea>
-                </div>
+            </div>
 
             <!-- submit -->
             <button type="submit">Submit</button>
         </form>
 
-        <!-- If 'no' is selected -->
+        <!-- if 'no' is selected -->
         <div id="guestNotAttending" class="hidden-section">
-            <p>We'll miss you, but thank you for lettinf us know x</p>
+            <p>We'll miss you, but thank you for letting us know x</p>
         </div>
 
         <!-- post submission options -->
