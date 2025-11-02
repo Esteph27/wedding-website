@@ -398,6 +398,19 @@ button:hover::after {
   max-height: 100px; 
 }
 
+.hidden-section {
+  display: none;
+  opacity: 0;
+  transform: translateY(-5px);
+  transition: all 0.4s ease;
+}
+
+.hidden-section.show {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 /* ================================
    Animations

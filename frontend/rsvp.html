@@ -71,42 +71,50 @@
                 <option value="no">No</option>
             </select>
 
-            <!-- dietry requirements -->
-            <label for="dietry">Dietry Requirements</label>
-            <select id="dietry" name="dietry" required>
-                <option value="" disabled selected>Select</option>
-                <option value="none">None</option>
-                <option value="vegetarian">Vegetarian</option>
-                <option value="gluten-free">Gluten-Free</option>
-                <option value="vegan">Vegan</option>
-                <option value="other">Other</option>
-            </select>
+            <!-- Hide field unless 'yes' is selected -->
+            <div id="guestAttending" class="hidden-section">
+                <!-- dietry requirements -->
+                <label for="dietry">Dietry Requirements</label>
+                <select id="dietry" name="dietry" required>
+                    <option value="" disabled selected>Select</option>
+                    <option value="none">None</option>
+                    <option value="vegetarian">Vegetarian</option>
+                    <option value="gluten-free">Gluten-Free</option>
+                    <option value="vegan">Vegan</option>
+                    <option value="other">Other</option>
+                </select>
 
-            <!-- Hidden text box appears only if "Other" is chosen -->
-            <div id="otherDietContainer">
-                <label for="otherDiet">Please specify:</label>
-                <input
-                    type="text"
-                    id="otherDiet"
-                    name="otherDiet"
-                    placeholder="Enter dietary details"
-                />
-            </div>
+                <!-- Hidden text box appears only if "Other" is chosen -->
+                <div id="otherDietContainer" class="hidden-section">
+                    <label for="otherDiet">Please specify:</label>
+                    <input
+                        type="text"
+                        id="otherDiet"
+                        name="otherDiet"
+                        placeholder="Enter dietary details"
+                    />
+                </div>
 
-            <!-- message-->
-            <label for="message">Message for the Couple / Song Request</label>
-            <textarea id="message" name="message" placeholder="Optional"></textarea>
+                <!-- message-->
+                <label for="message">Message for the Couple / Song Request</label>
+                <textarea id="message" name="message" placeholder="Optional"></textarea>
+                </div>
 
             <!-- submit -->
             <button type="submit">Submit</button>
         </form>
 
+        <!-- If 'no' is selected -->
+        <div id="guestNotAttending" class="hidden-section">
+            <p>We'll miss you, but thank you for lettinf us know x</p>
+        </div>
+
         <!-- post submission options -->
-         <div id="postRsvpOptions" style="display:none; margin-top: 20px;">
+         <div id="postRsvpOptions" class="hidden-section">
             <h3>Thank you!</h3>
             <p class="info">Your RSVP has been sent.</p>
             <button id="rsvpAnother" class="secondary-button">RSVP for someone else?</button>
-            <a href="index.html" class="secondary-button">Retrun Home</a>
+            <a href="index.html" class="secondary-button">Retrun To Home</a>
          </div>
     </div>
 
