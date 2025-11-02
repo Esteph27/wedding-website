@@ -384,6 +384,21 @@ button:hover::after {
   transform: scale(1.05);
 }
 
+#otherDietContainer {
+  opacity: 0;
+  transform: translateY(-5px);
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+#otherDietContainer.show {
+  opacity: 1;
+  transform: translateY(0);
+  max-height: 100px; 
+}
+
+
 /* ================================
    Animations
 ================================ */

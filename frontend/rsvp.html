@@ -82,6 +82,17 @@
                 <option value="other">Other</option>
             </select>
 
+            <!-- Hidden text box appears only if "Other" is chosen -->
+            <div id="otherDietContainer">
+                <label for="otherDiet">Please specify:</label>
+                <input
+                    type="text"
+                    id="otherDiet"
+                    name="otherDiet"
+                    placeholder="Enter dietary details"
+                />
+            </div>
+
             <!-- message-->
             <label for="message">Message for the Couple / Song Request</label>
             <textarea id="message" name="message" placeholder="Optional"></textarea>
