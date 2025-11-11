@@ -10,26 +10,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // --- handle attending logic ---
   attendingSelect.addEventListener("change", function () {
+    const requiredFields = guestAttending.querySelectorAll("[required]");
+  
     if (this.value === "yes") {
       guestAttending.classList.add("show");
       guestAttending.classList.remove("hidden-section");
       guestNotAttending.classList.remove("show");
-
-      // enable and require dietary field only when attending
-      dietSelect.disabled = false;
-      dietSelect.required = true;
+      guestNotAttending.classList.add("hidden-section");
+  
+      // Re-enable required fields
+      requiredFields.forEach((field) => field.disabled = false);
     } else if (this.value === "no") {
       guestAttending.classList.remove("show");
+      guestAttending.classList.add("hidden-section");
       guestNotAttending.classList.remove("show");
-
-      // disable dietary fields if not attending
-      dietSelect.disabled = true;
-      dietSelect.required = false;
-      otherDietInput.disabled = true;
-      otherDietInput.required = false;
+      guestNotAttending.classList.add("hidden-section");
+  
+      // Disable required fields so the form can submit
+      requiredFields.forEach((field) => field.disabled = true);
+    } else {
+      guestAttending.classList.remove("show");
+      guestAttending.classList.add("hidden-section");
+      guestNotAttending.classList.remove("show");
+      guestNotAttending.classList.add("hidden-section");
+  
+      // Also disable required fields by default
+      requiredFields.forEach((field) => field.disabled = true);
     }
   });
-
+  
   // --- handle dietary "other" logic ---
   dietSelect.addEventListener("change", function () {
     const isOther = this.value === "other";
