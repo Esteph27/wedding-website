@@ -21,7 +21,7 @@ h1 {
 
 p {
     font-family: "Bodoni Moda", serif;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     font-size: 16px;
     color: #2A343D;
 }
@@ -144,7 +144,14 @@ footer {
     margin: 20px;
     display: flex;
     justify-content: center;
-    color: black;
+    color: #2A343D;
+}
+
+.info h2 {
+  font-family: "Bodoni Moda", serif;
+  font-size: 30px;
+  font-weight: 100;
+  letter-spacing: 3px;
 }
 
 .info a {
@@ -171,6 +178,21 @@ footer {
   font-weight: 300;
   letter-spacing: 20px;
   color: #2A343D;
+  margin-top: 30px;
+  opacity: 0;
+  transform: scaleX(1.3) translateY(20px);
+  transform-origin: center; /* ensures it expands evenly from the middle */
+  animation: expandIn 2.5s ease-out forwards;
+}
+
+.smaller-title {
+  display: inline-block;
+  font-family: "Bodoni Moda", serif;
+  font-size: 40px;
+  font-weight: 300;
+  letter-spacing: 20px;
+  color: #2A343D;
+  margin-top: 30px;
   opacity: 0;
   transform: scaleX(1.3) translateY(20px);
   transform-origin: center; /* ensures it expands evenly from the middle */
@@ -446,22 +468,6 @@ footer {
     letter-spacing: 3px;
   }
 }
-/* ================================
-   RSVP
-================================ */
-.form-control {
-    font-family: "Antic Didone", serif;
-    font-size: 20px;
-    font-weight: 100;
-    text-align: center;
-    border: none;
-}
-
-.form-control:focus {
-    outline: none;
-    box-shadow: 0 0 5px #aaa;
-    border: 1px solid #aaa; 
-}
 
 /* ================================
    Media queries
@@ -476,10 +482,16 @@ footer {
     display: none;
   }
 
-  /* welcome page */
+
   .title {
-    font-size: 38px;          /* slightly smaller text for mobile */
-    letter-spacing: 12px;     /* tighter spacing looks better on narrow screens */
+    font-size: 38px;
+    letter-spacing: 12px;
+    animation: expandInMobile 2s ease-out forwards;
+  }
+
+  .smaller-title {
+    font-size: 38px;         
+    letter-spacing: 5px;
     animation: expandInMobile 2s ease-out forwards;
   }
 
