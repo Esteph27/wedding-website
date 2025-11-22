@@ -164,9 +164,6 @@ footer {
     text-transform: none;
 }
 
-/* ================================
-   Welcome page elements
-================================ */
 .title {
   display: inline-block;
   font-family: "Bodoni Moda", serif;
@@ -180,6 +177,9 @@ footer {
   animation: expandIn 2.5s ease-out forwards;
 }
 
+/* ================================
+   Welcome page elements
+================================ */
 #passwordInput {
   width: 100%;
   border: none;
@@ -302,16 +302,6 @@ footer {
   padding-bottom: 0;
 }
 
-.rsvp-container {
-  max-width: 500px;
-  width: 90%;
-  margin: 50px auto 80px auto;
-  font-family: "Bodoni Moda", serif;
-  text-align: center;
-  letter-spacing: 2px;
-  color: #2A343D;
-}
-
 #rsvpForm input,
 #rsvpForm select,
 #rsvpForm textarea {
@@ -356,12 +346,6 @@ footer {
   transform: scale(1.05);
 }
 
-#rsvp-success {
-  margin-top: 20px;
-  font-size: 18px;
-  color: #2A343D;
-}
-
 #rsvpAnother {
   font-size: 20px;
 }
@@ -389,6 +373,16 @@ footer {
   opacity: 1;
   transform: translateY(0);
   max-height: 100px; 
+}
+
+.rsvp-container {
+  max-width: 500px;
+  width: 90%;
+  margin: 50px auto 80px auto;
+  font-family: "Bodoni Moda", serif;
+  text-align: center;
+  letter-spacing: 2px;
+  color: #2A343D;
 }
 
 .hidden-section {
