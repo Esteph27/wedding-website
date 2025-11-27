@@ -152,6 +152,14 @@ footer {
   font-size: 30px;
   font-weight: 100;
   letter-spacing: 3px;
+  margin-bottom: 2rem;
+}
+
+.info h3 {
+  font-family: 'Monsieur La Doulaise', cursive;
+  font-size: 35px;
+  font-weight: 100;
+  letter-spacing: 3px;
 }
 
 .info a {
@@ -419,6 +427,24 @@ footer {
   animation: fadeInSubtle 0.6s ease forwards;
 }
 
+/* ================================
+  Travel & Accomodation
+================================ */
+
+.collapse-btn.btn{
+  background-color: #2A343D;
+  color: white;
+  font-size: 18px;
+  letter-spacing: 2px;
+  margin-top: 2rem;
+}
+
+.card.card-body {
+  border: none;
+  padding-right: 0;
+  padding-left: 0;
+  margin-top: 2rem;
+}
 /* ================================
    Animations
 ================================ */
