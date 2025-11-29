@@ -423,6 +423,34 @@ footer {
 /* ================================
   Travel & Accomodation
 ================================ */
+.accordion-body {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.accordion-body h3 {
+  font-family: "Monsieur La Doulaise", cursive;
+  font-weight: 100;
+  letter-spacing: 3px;
+  margin-bottom: 2rem;
+  font-size: 28px;
+}
+
+/* accordion button when expanded - override bootstrap's default col */
+.accordion-button:not(.collapsed) {
+  background-color: #2A343D !important;
+  color: white !important;
+  box-shadow: none !important;
+}
+
+/* chevron colour when expanded - override bootstrap's default col */
+.accordion-button:not(.collapsed)::after {
+  filter: brightness(0) invert(1); /* turns it white */
+}
+
+.accordion-button {
+  border-radius: 0 !important; /* remove border rounding on expand */
+}
 
 .collapse-btn.btn{
   background-color: #2A343D;
@@ -430,11 +458,7 @@ footer {
   font-size: 18px;
   letter-spacing: 2px;
   margin-top: 2rem;
-}
-
-.accordion-button {
-  justify-content: center;   /* centers the text */
-  text-align: center;        /* ensures multiline center */
+  margin-bottom: 2rem;
 }
 
 
@@ -500,7 +524,6 @@ footer {
   .container .space {
     display: none;
   }
-
 
   .title {
     font-size: 38px;
