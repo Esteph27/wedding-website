@@ -32,7 +32,7 @@
                 <strong>We recommend reading it before you book.</strong>
             </p>
             <a href="https://drive.google.com/file/d/1Jb-G6_vhLb_B0ws1OmGAFyu8rJnRds3Q/view?usp=drive_link" target="_blank" class="page-link">
-                Download Travel Guide (PDF) here.
+                Download Guest Information (PDF) here.
             </a>
         </div>
     </div>
@@ -40,68 +40,107 @@
         <div class="vertical-line"></div>
     </div>
 
-    <!-- Air b n b -->
+    <!-- Airbnb -->
     <div class="info">
-        <div>            
+        <div>
             <h2>Airbnb Recommendations</h2>
 
-            <p>Inase you're unsure where to book or need some ideas, we've put together a list of Airbnb options which we hope you find useful.</p>
-            <p>If you'd rather book a hotel, the venue have a list of their recommended hotels which you can find in their Guest Information guide which is linked above.</p>
-
-            <!-- Bootstrap collapse button -->
-            <p class="d-inline-flex gap-1">
-                <button class="btn collapse-btn" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                    View Options
-                </button>
+            <p>In case you're unsure where to book or need some ideas, we've put together a list of Airbnb options which we hope you find useful.</p>
+            <p>If you'd rather book a hotel, the venue has a list of their recommended hotels which you can find in their Guest Information guide which is linked above.</p>
+            
+            <!-- bootstrap collapse button -->
+            <p>
+                <a class="btn collapse-btn btn" data-bs-toggle="collapse" href="#airbnbGroups" role="button" aria-expanded="false" aria-controls="airbnbGroups">
+                    View more options
+                </a>
             </p>
-            <div class="collapse" id="collapseExample">
-                <!-- option 1 -->
-                <div class="card card-body">
-                    <h3>Bell Cottage</h3>
-                    <!-- code from Airbnb -->
-                    <div class="airbnb-embed-frame" data-id="46423726" data-view="home" data-hide-price="true" style="width: 400px; height: 300px; margin: auto; padding: 0;">
-                        <a href="https://www.airbnb.co.uk/rooms/46423726?check_in=2026-01-26&amp;check_out=2026-01-31&amp;guests=1&amp;adults=2&amp;s=66&amp;source=embed_widget">View on Airbnb</a>
-                        <a href="https://www.airbnb.co.uk/rooms/46423726?check_in=2026-01-26&amp;check_out=2026-01-31&amp;guests=1&amp;adults=2&amp;s=66&amp;source=embed_widget" rel="nofollow">Cottage in Ringwould · ★4.98 · 1 bedroom · 1 bed · 1 bathroom</a>
-                        <script async="" src="https://www.airbnb.co.uk/embeddable/airbnb_jssdk"></script>
-                    </div>
-                    <div class="container text-center">
-                        <div class="row row-cols-1">
-                            <div class="col">
-                                <p>Ideal for 2 guests</p>
-                            </div>
-                            <div class="col">
+            <!-- bootstrap accordian wrapper to group airbnb options by number of guests -->
+            <div class="collapse" id="airbnbGroups">
+                <div class="accordion" id="airbnbAccordion">
+                    <!-- ========== group 1 - for 2 people ========== -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="groupTwoHeading">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#groupTwo" aria-expanded="false" aria-controls="groupTwo">
+                            Places Ideal for 2 People
+                            </button>
+                        </h2>
+
+                        <div id="groupTwo" class="accordion-collapse collapse" aria-labelledby="groupTwoHeading" data-bs-parent="#airbnbAccordion">
+                            <div class="accordion-body">
+
+                                <!-- option 1 -->
+                                <h3 class="mb-4">Bell Cottage</h3>
                                 <p>1 bed, 1 bathroom</p>
-                            </div>
-                            <div class="col">
                                 <p>Free parking</p>
+                                <div class="airbnb-embed-frame"
+                                    data-id="46423726"
+                                    data-view="home"
+                                    data-hide-price="true"
+                                    style="width: 400px; height: 300px; margin: 0 auto;">
+                                    <a href="https://www.airbnb.co.uk/rooms/46423726">View on Airbnb</a>
+                                    <a href="https://www.airbnb.co.uk/rooms/46423726" rel="nofollow">
+                                    Cottage in Ringwould · ★4.98 · 1 bedroom · 1 bed · 1 bathroom
+                                    </a>
+                                    <script async src="https://www.airbnb.co.uk/embeddable/airbnb_jssdk"></script>
+                                </div>
+
+                                <hr>
+
+                                <!-- option 2 -->
+                                <h3 class="mb-4">Little Cottage by the Sea</h3>
+                                <p>1 bed, 1 bathroom</p>
+                                <p>Free parking</p>
+                                <div class="airbnb-embed-frame"
+                                    data-id="685813115075422651"
+                                    data-view="home"
+                                    data-hide-price="true"
+                                    style="width: 400px; height: 300px; margin: 0 auto;">
+                                    <a href="https://www.airbnb.co.uk/rooms/685813115075422651">View on Airbnb</a>
+                                    <a href="https://www.airbnb.co.uk/rooms/685813115075422651" rel="nofollow">
+                                    Cottage in Ringwould · ★4.9 · 1 bedroom · 1 bed · 1 bathroom
+                                    </a>
+                                    <script async src="https://www.airbnb.co.uk/embeddable/airbnb_jssdk"></script>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- option 2 -->
-                <div class="card card-body">
-                    <h3>Little Cottage by the sea</h3>
-                    <!-- code from Airbnb -->
-                    <div class="airbnb-embed-frame" data-id="685813115075422651" data-view="home" data-hide-price="true" style="width: 400px; height: 300px; margin: auto; padding: 0;">
-                        <a href="https://www.airbnb.co.uk/rooms/685813115075422651?check_in=2025-12-08&amp;check_out=2025-12-13&amp;guests=1&amp;adults=2&amp;s=66&amp;source=embed_widget">View on Airbnb</a>
-                        <a href="https://www.airbnb.co.uk/rooms/685813115075422651?check_in=2025-12-08&amp;check_out=2025-12-13&amp;guests=1&amp;adults=2&amp;s=66&amp;source=embed_widget" rel="nofollow">Cottage in Ringwould · ★4.9 · 1 bedroom · 1 bed · 1 bathroom</a>
-                        <script async="" src="https://www.airbnb.co.uk/embeddable/airbnb_jssdk"></script>
-                    </div>
-                    <div class="container text-center">
-                        <div class="row row-cols-1">
-                            <div class="col">
-                                <p>Ideal for 2 guests</p>
-                            </div>
-                            <div class="col">
-                                <p>1 bed, 1 bathroom</p>
-                            </div>
-                            <div class="col">
-                                <p>Free parking</p>
+
+                    <!-- ========== group 2 - for 4 people (emtpy for now) ========== -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="groupFourHeading">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#groupFour" aria-expanded="false" aria-controls="groupFour">
+                            Places Ideal for 4 People
+                            </button>
+                        </h2>
+                        <div id="groupFour" class="accordion-collapse collapse" aria-labelledby="groupFourHeading" data-bs-parent="#airbnbAccordion">
+                            <div class="accordion-body">
+                                <p>We'll be adding recommendations here soon.</p>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
+
+                    <!-- ========== group 3 - for 6+ people (emtpy for now) ========== -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="groupSixHeading">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#groupSix" aria-expanded="false" aria-controls="groupSix">
+                            Places for 6+ People
+                            </button>
+                        </h2>
+                        <div id="groupSix" class="accordion-collapse collapse" aria-labelledby="groupSixHeading" data-bs-parent="#airbnbAccordion">
+                            <div class="accordion-body">
+                                <p>We'll be adding recommendations here soon.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- end accordion -->
+
+                <!-- hide everything -->
+                <p class="mt-3">
+                    <a class="btn btn-secondary" data-bs-toggle="collapse" href="#airbnbGroups">
+                    Hide all options
+                    </a>
+                </p>
+            </div> <!-- end collapse -->
         </div>
     </div>
 
