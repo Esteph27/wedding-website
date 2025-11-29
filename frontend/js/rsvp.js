@@ -13,25 +13,25 @@ document.addEventListener("DOMContentLoaded", () => {
     const requiredFields = guestAttending.querySelectorAll("[required]");
   
     if (this.value === "yes") {
-      guestAttending.classList.add("show");
+      guestAttending.classList.add("show-content");
       guestAttending.classList.remove("hidden-section");
-      guestNotAttending.classList.remove("show");
+      guestNotAttending.classList.remove("show-content");
       guestNotAttending.classList.add("hidden-section");
   
       // Re-enable required fields
       requiredFields.forEach((field) => field.disabled = false);
     } else if (this.value === "no") {
-      guestAttending.classList.remove("show");
+      guestAttending.classList.remove("show-content");
       guestAttending.classList.add("hidden-section");
-      guestNotAttending.classList.remove("show");
+      guestNotAttending.classList.remove("show-content");
       guestNotAttending.classList.add("hidden-section");
   
       // Disable required fields so the form can submit
       requiredFields.forEach((field) => field.disabled = true);
     } else {
-      guestAttending.classList.remove("show");
+      guestAttending.classList.remove("show-content");
       guestAttending.classList.add("hidden-section");
-      guestNotAttending.classList.remove("show");
+      guestNotAttending.classList.remove("show-content");
       guestNotAttending.classList.add("hidden-section");
   
       // Also disable required fields by default
@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // --- handle dietary "other" logic ---
   dietSelect.addEventListener("change", function () {
     const isOther = this.value === "other";
-    otherDietContainer.classList.toggle("show", isOther);
+    otherDietContainer.classList.toggle("show-content", isOther);
     otherDietInput.required = isOther;
     otherDietInput.disabled = !isOther;
 
@@ -61,13 +61,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     if (response.ok) {
-      form.classList.remove("show");
+      form.classList.remove("show-content");
       form.classList.add("hidden-section");
 
       if (attendingSelect.value === "no") {
-        guestNotAttending.classList.add("show");
+        guestNotAttending.classList.add("show-content");
       } else {
-        postRsvpOptions.classList.add("show");
+        postRsvpOptions.classList.add("show-content");
       }
     } else {
       alert("There was a problem submitting your RSVP. Please try again. If the problem persists, please reach out to David or Esteph.");
@@ -77,13 +77,13 @@ document.addEventListener("DOMContentLoaded", () => {
   // --- handle RSVP for someone else ---
   document.getElementById("rsvpAnother").addEventListener("click", function () {
     form.reset();
-    form.classList.add("show");
+    form.classList.add("show-content");
     form.classList.remove("hidden-section");
 
-    guestAttending.classList.remove("show");
-    otherDietContainer.classList.remove("show");
-    postRsvpOptions.classList.remove("show");
-    guestNotAttending.classList.remove("show");
+    guestAttending.classList.remove("show-content");
+    otherDietContainer.classList.remove("show-content");
+    postRsvpOptions.classList.remove("show-content");
+    guestNotAttending.classList.remove("show-content");
 
     // re-enable main fields
     dietSelect.disabled = false;

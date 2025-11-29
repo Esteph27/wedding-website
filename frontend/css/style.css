@@ -155,13 +155,6 @@ footer {
   margin-bottom: 2rem;
 }
 
-.info h3 {
-  font-family: 'Monsieur La Doulaise', cursive;
-  font-size: 35px;
-  font-weight: 100;
-  letter-spacing: 3px;
-}
-
 .info a {
     font-size: 20px;
     letter-spacing: 0;
@@ -399,7 +392,7 @@ footer {
   transition: all 0.3s ease;
 }
 
-#otherDietContainer.show {
+#otherDietContainer.show-content {
   opacity: 1;
   transform: translateY(0);
   max-height: 100px; 
@@ -421,8 +414,8 @@ footer {
   transform: translateY(10px);
 }
 
-/* Reuse existing animation for show */
-.show {
+/* Reuse existing animation for show-content */
+.show-content {
   display: block;
   animation: fadeInSubtle 0.6s ease forwards;
 }
@@ -439,11 +432,12 @@ footer {
   margin-top: 2rem;
 }
 
-.card.card-body {
-  border: none;
-  padding-right: 0;
-  padding-left: 0;
+.accordion-button {
+  justify-content: center;   /* centers the text */
+  text-align: center;        /* ensures multiline center */
 }
+
+
 /* ================================
    Animations
 ================================ */
