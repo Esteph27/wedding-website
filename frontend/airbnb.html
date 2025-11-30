@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- TODO! change title to page title -->
+    <title>Estephanie & David - Wedding</title>
+
+    <!-- Google font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Monsieur+La+Doulaise&display=swap" rel="stylesheet">  
+    
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- title -->
+    <h1 class="smaller-title">Airbnb</h1>
+     <div class="container">
+        <div class="vertical-line"></div>
+    </div>
+
+    <div id="airbnbGroups">
+        <!-- Nav tabs - group airbnb options by number of guests-->
+        <ul class="nav nav-tabs airbnb-tabs" id="airbnbTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="two-tab" data-bs-toggle="tab"
+                data-bs-target="#two" type="button" role="tab">
+                2 Guests
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="four-tab" data-bs-toggle="tab"
+                data-bs-target="#four" type="button" role="tab">
+                4 Guests
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="six-tab" data-bs-toggle="tab"
+                data-bs-target="#six" type="button" role="tab">
+                6+ Guests
+                </button>
+            </li>
+        </ul>
+
+        <!-- Tab content -->
+        <div class="tab-content mt-4" id="airbnbTabContent">
+
+            <!-- 2 guests tab -->
+            <div class="tab-pane fade show active" id="two" role="tabpanel">
+                <div class="airbnb-grid">
+
+                <!-- Option 1 -->
+                <div class="airbnb-card">
+                    <h3>Bell Cottage</h3>
+                    <p>1 bed, 1 bathroom</p>
+                    <p>Free parking</p>
+                    <div class="airbnb-embed-frame"
+                    data-id="46423726" data-view="home" data-hide-price="true">
+                    <a href="https://www.airbnb.co.uk/rooms/46423726">View on Airbnb</a>
+                    <a href="https://www.airbnb.co.uk/rooms/46423726" rel="nofollow">
+                        Cottage in Ringwould · ★4.98 · 1 bedroom · 1 bed · 1 bathroom
+                    </a>
+                    </div>
+                </div>
+
+                <!-- Option 2 -->
+                <div class="airbnb-card">
+                    <h3>Little Cottage by the Sea</h3>
+                    <p>1 bed, 1 bathroom</p>
+                    <p>Free parking</p>
+                    <div class="airbnb-embed-frame"
+                    data-id="685813115075422651" data-view="home" data-hide-price="true">
+                    <a href="https://www.airbnb.co.uk/rooms/685813115075422651">View on Airbnb</a>
+                    <a href="https://www.airbnb.co.uk/rooms/685813115075422651" rel="nofollow">
+                        Cottage in Ringwould · ★4.9 · 1 bedroom · 1 bed · 1 bathroom
+                    </a>
+                    </div>
+                </div>
+
+                </div>
+            </div>
+
+            <!-- 4 guests tab -->
+            <div class="tab-pane fade" id="four" role="tabpanel">
+                <p>We’ll be adding recommendations here soon.</p>
+            </div>
+
+            <!-- 6+ guests tab -->
+            <div class="tab-pane fade" id="six" role="tabpanel">
+                <p>We’ll be adding recommendations here soon.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- back to travel -->
+    <!-- TODO! fix the 'return to' links when hover over the text goes white -->
+    <div class="container">
+        <div class="vertical-line"></div>
+    </div>
+    <div class="container">
+        <a href="travel.html" id="returnHome" class="page-link">Back to Travel & Accommodation</a>
+    </div>
+
+    <!-- return to home link -->
+    <div class="container">
+        <div class="vertical-line"></div>
+    </div>
+    <div class="container">
+        <a href="home.html" id="returnHome" class="page-link">Retrun To Home</a>
+    </div>
+    <div class="container">
+        <div class="vertical-line"></div>
+    </div>
+        
+    <!-- aibnb embeded script - https://www.airbnb.co.uk/help/article/923 -->
+    <script async src="https://www.airbnb.co.uk/embeddable/airbnb_jssdk"></script>
+
+    <!-- footer -->
+    <footer class="container">
+        <div id="initials">E & D</div>
+        <div class="small-text">
+            <p>12.09.2026</p>
+            <br>
+            <p>Created by us</p>
+            <p>x</p>
+        </div>
+    </footer>
+
+
+</body>
+</html>
