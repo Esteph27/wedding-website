@@ -373,6 +373,7 @@ footer {
   font-size: 20px;
 }
 
+/* TODO:rename to 'return-to-link' and make a class as this is being reused */
 #returnHome {
   font-size: 20px;
 }
@@ -420,47 +421,54 @@ footer {
   animation: fadeInSubtle 0.6s ease forwards;
 }
 
+
 /* ================================
-  Travel & Accomodation
+   Airbnb
 ================================ */
-.accordion-body {
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.accordion-body h3 {
-  font-family: "Monsieur La Doulaise", cursive;
-  font-weight: 100;
-  letter-spacing: 3px;
-  margin-bottom: 2rem;
-  font-size: 28px;
-}
-
-/* accordion button when expanded - override bootstrap's default col */
-.accordion-button:not(.collapsed) {
-  background-color: #2A343D !important;
-  color: white !important;
-  box-shadow: none !important;
-}
-
-/* chevron colour when expanded - override bootstrap's default col */
-.accordion-button:not(.collapsed)::after {
-  filter: brightness(0) invert(1); /* turns it white */
-}
-
-.accordion-button {
-  border-radius: 0 !important; /* remove border rounding on expand */
-}
-
-.collapse-btn.btn{
-  background-color: #2A343D;
-  color: white;
+/* tabs */
+.airbnb-tabs .nav-link {
+  color: #2A343D;
   font-size: 18px;
-  letter-spacing: 2px;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  letter-spacing: 1px;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 10px 12px;
 }
 
+.airbnb-tabs .nav-link:hover {
+  border-bottom: 1px solid #2A343D;
+  color: #2A343D;
+}
+
+.airbnb-tabs .nav-link.active {
+  color: #2A343D !important;
+  border-bottom: 1px solid #2A343D !important;
+  background: none !important;
+}
+
+/* grid and card styles */
+.airbnb-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+.airbnb-card {
+  border: 1px solid #dcdcdc;
+  padding: 1.5rem;
+  border-radius: 8px;
+  background: white;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.airbnb-card h3 {
+  font-family: "Monsieur La Doulaise", cursive;
+  color:#2A343D;
+  font-weight: 100;
+  letter-spacing: 2px;
+  margin-bottom: 2rem;
+  font-size: 32px;
+}
 
 /* ================================
    Animations
@@ -546,6 +554,20 @@ footer {
       opacity: 1;
       transform: scaleX(1) translateY(0);
     }
+  }
+}
+
+/* Tablet: 2 columns */
+@media (min-width: 768px) {
+  .airbnb-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Large desktop: 3 columns */
+@media (min-width: 1200px) {
+  .airbnb-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
