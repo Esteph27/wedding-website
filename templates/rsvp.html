@@ -1,156 +1,140 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Estephanie & David - Wedding</title>
+{% extends "base.html" %}
 
-  <!-- Google font-->
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Monsieur+La+Doulaise&display=swap" rel="stylesheet">
-  
-  <!-- Link to external CSS -->
-  <link rel="stylesheet" href="css/style.css">
-  
-  <!-- TODO: remove duplicate line -->
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <!-- title -->
-    <h1 class="title">Répondez s'il vous plaît</h1>
-    <div class="container">
-        <div class="vertical-line"></div>
-    </div>
+{% block title %}RSVP{% endblock %}
 
-    <!-- rsvp info and welcome message -->
-    <div class="info">
-        <div>
-            <p>We are so excited to celebrate our special day with you!
-                <br>
-                <br>
-                Please let us know if you'll be joining us by completing the RSVP below.
-            </p>
-            <p>
-                Kindly note that this is an <span class="underline">adult-only</span> celebration, and invitations are extended only to those named on your invite.
-                <br>
-                <br>
-                Please RSVP by <span class="underline">12th December 2025</span> so we can finalise numbers.
-            </p>
-            <p>
-                We can't wait to share this unforgettable day with our closest family and friends! 
-            </p>
-        </div>
-    </div>
-    <div class="container">
-        <div class="vertical-line"></div>
-    </div>
+{% block content %}
 
-    <!-- RSVP link -->
-    <div class="container">
-        <div>
-            <a id="scroll-down-link" class="page-link">RSVP</a>
-        </div>
-    </div>
-    <div class="container">
-        <div class="vertical-line"></div>
-    </div>
+<!-- title -->
+<h1 class="title">Répondez s'il vous plaît</h1>
 
-    <!-- RSVP form -->
-    <div id="target" class="rsvp-container">
-        <form id="rsvpForm" action="https://formspree.io/f/xblplddd" method="POST">
-            <!-- guest name -->
-            <label for="name">Enter Your Name</label>
-            <input type="text" id="name" name="name" placeholder="First and Second Name" required>
-            
-            <!-- attendance -->
-            <label for="attending">Will you be attending?</label>
-            <select id="attending" name="attending" required>
+<div class="container">
+    <div class="vertical-line"></div>
+</div>
+
+<!-- rsvp info and welcome message -->
+<div class="info">
+    <div>
+        <p>We are so excited to celebrate our special day with you!
+            <br><br>
+            Please let us know if you'll be joining us by completing the RSVP below.
+        </p>
+        <p>
+            Kindly note that this is an <span class="underline">adult-only</span> celebration, 
+            and invitations are extended only to those named on your invite.
+            <br><br>
+            Please RSVP by <span class="underline">12th March 2026</span> so we can finalise numbers.
+        </p>
+        <p>
+            We can't wait to share this unforgettable day with our closest family and friends!
+        </p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="vertical-line"></div>
+</div>
+
+<!-- RSVP link -->
+<div class="container">
+    <div>
+        <a id="scroll-down-link" class="page-link">RSVP</a>
+    </div>
+</div>
+
+<div class="container">
+    <div class="vertical-line"></div>
+</div>
+
+<!-- RSVP form -->
+<div id="target" class="rsvp-container">
+
+    <!-- Formspree endpoint - https://formspree.io/ -->
+    <form id="rsvpForm" action="https://formspree.io/f/xblplddd" method="POST">
+        
+        <!-- guest name -->
+        <label for="name">Enter Your Name</label>
+        <input type="text" id="name" name="name" placeholder="First and Second Name" required>
+
+        <!-- attendance -->
+        <label for="attending">Will you be attending?</label>
+        <select id="attending" name="attending" required>
+            <option value="" disabled selected>Select</option>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+
+        <!-- only visible if "yes" is selected -->
+        <div id="guestAttending" class="hidden-section">
+
+            <!-- dietry requirements -->
+            <label for="dietry">Dietry Requirements</label>
+            <select id="dietry" name="dietry" required>
                 <option value="" disabled selected>Select</option>
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
+                <option value="none">None</option>
+                <option value="vegetarian">Vegetarian</option>
+                <option value="gluten-free">Gluten-Free</option>
+                <option value="vegan">Vegan</option>
+                <option value="other">Other</option>
             </select>
 
-            <!-- hide field unless 'yes' is selected -->
-            <div id="guestAttending" class="hidden-section">
-                <!-- dietry requirements -->
-                <label for="dietry">Dietry Requirements</label>
-                <select id="dietry" name="dietry" required>
-                    <option value="" disabled selected>Select</option>
-                    <option value="none">None</option>
-                    <option value="vegetarian">Vegetarian</option>
-                    <option value="gluten-free">Gluten-Free</option>
-                    <option value="vegan">Vegan</option>
-                    <option value="other">Other</option>
-                </select>
-
-                <!-- hidden text box appears only if "Other" is chosen -->
-                <div id="otherDietContainer" class="hidden-section">
-                    <label for="otherDiet">Please specify:</label>
-                    <input
-                        type="text"
-                        id="otherDiet"
-                        name="otherDiet"
-                        placeholder="Enter dietary details"
-                    />
-                </div>
-
-                <!-- message-->
-                <label for="message">Message for the Couple / Song Request</label>
-                <textarea id="message" name="message" placeholder="Optional"></textarea>
+            <!-- hidden field for custom diet -->
+            <div id="otherDietContainer" class="hidden-section">
+                <label for="otherDiet">Please specify:</label>
+                <input
+                    type="text"
+                    id="otherDiet"
+                    name="otherDiet"
+                    placeholder="Enter dietary details"
+                />
             </div>
 
-            <!-- submit -->
-            <button type="submit" class="page-link">Submit</button>
-        </form>
+            <!-- message -->
+            <label for="message">Message for the Couple / Song Request</label>
+            <textarea id="message" name="message" placeholder="Optional"></textarea>
 
-        <!-- if 'no' is selected -->
-        <div id="guestNotAttending" class="hidden-section">
-            <p>We'll miss you, but thank you for letting us know.
-                <br>
-                x
-            </p>
         </div>
 
-        <!-- post submission options -->
-        <div id="postRsvpOptions" class="hidden-section">
-            <h3>Thank you!</h3>
-            <p>Your RSVP has been sent.
-                <br>
-                We look forward to celebrating with you.
-                <br>
-                x
-            </p>
-            <div class="container">
-                <div class="vertical-line"></div>
-            </div>
-            <a id="rsvpAnother" class="page-link">RSVP for someone else?</a>
-        </div>
+        <!-- submit -->
+        <button type="submit" class="page-link">Submit</button>
+    </form>
 
-        <!-- return to home link -->
+    <!-- if "no" selected -->
+    <div id="guestNotAttending" class="hidden-section">
+        <p>We'll miss you, but thank you for letting us know.
+            <br>
+            x
+        </p>
+    </div>
+
+    <!-- after submission -->
+    <div id="postRsvpOptions" class="hidden-section">
+        <h3>Thank you!</h3>
+        <p>Your RSVP has been sent.
+            <br>
+            We look forward to celebrating with you!
+            <br>
+            x
+        </p>
         <div class="container">
             <div class="vertical-line"></div>
         </div>
-        <div class="container">
-            <a href="home.html" id="returnHome" class="page-link">Retrun To Home</a>
-        </div>
+        <a id="rsvpAnother" class="page-link">RSVP for someone else?</a>
     </div>
-            
-    <!-- scroll down to rsvp -->
-    <script src="js/scrolldown.js"></script>
 
-    <!-- RSVP JS -->
-    <script src="js/rsvp.js"></script>
+    <!-- return home -->
+    <div class="container">
+        <div class="vertical-line"></div>
+    </div>
 
-    <!-- footer -->
-    <footer class="container">
-        <div id="initials">E & D</div>
-        <div class="small-text">
-            <p>12.09.2026</p>
-            <br>
-            <p>Created by us</p>
-            <p>x</p>
-        </div>
-    </footer>
-</body>
-</html>
+    <div class="container">
+        <a href="{{ url_for('home') }}" id="returnHome" class="page-link">Return To Home</a>
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/scrolldown.js') }}"></script>
+<script src="{{ url_for('static', filename='js/rsvp.js') }}"></script>
+{% endblock %}
