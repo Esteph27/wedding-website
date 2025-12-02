@@ -20,7 +20,7 @@ def travel():
     return render_template("travel.html")
 
 @app.route("/airbnb")
-def schedule():
+def airbnb():
     return render_template("airbnb.html")
 
 if __name__ == "__main__":
