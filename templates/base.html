@@ -18,11 +18,16 @@
   <meta name="robots" content="noindex, nofollow">
 </head>
 <body>
+    {% block content %}{% endblock %}
 
-  {% block content %}{% endblock %}
+    <!-- footer block as footer is not shown on all pages -->
+    {% block footer %}
+        {% include "footer.html" %}
+    {% endblock %}
 
-  {% block scripts %}{% endblock %}
+    {% block scripts %}{% endblock %}
 
 </body>
 </html>
+
 

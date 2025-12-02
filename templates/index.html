@@ -1,35 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="robots" content="noindex, nofollow">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome to Our Wedding</title>
+{% extends "base.html" %}
 
-  <!-- Google font-->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Monsieur+La+Doulaise&display=swap" rel="stylesheet">
-  
-  <!-- Link to external CSS -->
-  <link rel="stylesheet" href="css/style.css">
+{% block title %}Login page{% endblock %}
 
-  <!-- light safegaurd to prevent search engines from indexing -->
-  <meta name="robots" content="noindex, nofollow">
-
-</head>
-<body>
-    <div class="container height">
-        <div class="div-item">
-            <h1 class="title">WELCOME</h1>
-            <hr class="horizontal-line">
-            <input type="password" id="passwordInput" placeholder="Enter password here...">
-            <button id="enter-button" onclick="checkPassword()">Enter</button>
-            <p class="info" id="error">Incorrect password</p>
-        </div>
+{% block content %}
+<div class="container height">
+    <div class="div-item">
+        <h1 class="title">WELCOME</h1>
+        <hr class="horizontal-line">
+        <input type="password" id="passwordInput" placeholder="Enter password here...">
+        <button id="enter-button" onclick="checkPassword()">Enter</button>
+        <p class="info" id="error">Incorrect password</p>
     </div>
-    
-    <!-- authenticate access -->
-    <script src="js/authenticate.js"></script>
-</body>
-</html>
+</div>
+{% endblock %}
+
+{% block footer %}{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/authenticate.js') }}"></script>
+{% endblock %}
+
