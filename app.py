@@ -7,8 +7,8 @@ def index():
     # TODO: handle password more securely
     return render_template("index.html")
 
-@app.route("home")
-def index():
+@app.route("/home")
+def home():
     return render_template("home.html")
 
 @app.route("/rsvp")
