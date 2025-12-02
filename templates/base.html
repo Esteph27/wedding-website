@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Our Wedding{% endblock %}</title>
+
+  <!-- Google font-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Monsieur+La+Doulaise&display=swap" rel="stylesheet">
+  
+  <!-- link to CSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- light safegaurd to prevent search engines from indexing -->
+  <meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+
+  {% block content %}{% endblock %}
+
+  {% include "footer.html" %}
+
+  {% block scripts %}{% endblock %}
+
+</body>
+</html>
+
