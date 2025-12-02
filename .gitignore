@@ -1,5 +1,11 @@
-# amplify
-node_modules
-.amplify
-amplify_outputs*
-amplifyconfiguration*
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.env
+venv/
+.env/
+
+# Fly.io
+fly.toml
