@@ -135,6 +135,7 @@ footer {
     font-weight: 100;
     padding-top: 10px;
     color: #2A343D;
+    text-align: center;
 }
 
 .info {
@@ -426,6 +427,10 @@ footer {
    Airbnb
 ================================ */
 /* tabs */
+.airbnb-tabs {
+  justify-content: center;
+}
+
 .airbnb-tabs .nav-link {
   color: #2A343D;
   font-size: 18px;
@@ -459,6 +464,7 @@ footer {
   border-radius: 8px;
   background: white;
   transition: box-shadow 0.2s ease, transform 0.2s ease;
+  text-align: center;
 }
 
 .airbnb-card h3 {
