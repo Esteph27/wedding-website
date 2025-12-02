@@ -1,106 +1,87 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Estephanie & David - Wedding</title>
+{% extends "base.html" %}
 
-  <!-- Google font-->
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Monsieur+La+Doulaise&display=swap" rel="stylesheet">
-   
-   <!-- Link to external CSS -->
-  <link rel="stylesheet" href="css/style.css">
-  
-  <!-- light safegaurd to prevent search engines from indexing -->
-  <meta name="robots" content="noindex, nofollow">
-</head>
-<body>
-    <!-- title -->
-    <h1 class="title fade delay-1">ESTEPHANIE & DAVID</h1>
+{% block title %}Estephanie and David - Wedding{% endblock %}
 
-    <div class="container fade delay-2">
-        <p>SATURDAY 12TH SEPTEMBER 2026</p>
-        <div class="space"><p>|</p></div>
-        <a class="doc-link" href="https://ripplecourtestate.co.uk/" target="_blank">
+{% block content %}
+
+<!-- title -->
+<h1 class="title fade delay-1">ESTEPHANIE & DAVID</h1>
+
+<div class="container fade delay-2">
+    <p>SATURDAY 12TH SEPTEMBER 2026</p>
+    <div class="space"><p>|</p></div>
+    <a class="doc-link" href="https://ripplecourtestate.co.uk/" target="_blank">
         RIPPLE COURT ESTATE, DEAL
-        </a>
-    </div>
+    </a>
+</div>
 
-    <!-- count down time -->
-    <div id="countdown" class="fade delay-4"></div>
+<!-- count down time to wedding -->
+<div id="countdown" class="fade delay-4"></div>
 
-    <div class="container fade delay-5">
-        <div class="vertical-line"></div>
-    </div>
+<div class="container fade delay-5">
+    <div class="vertical-line"></div>
+</div>
 
-    <!-- RSVP section -->
-    <div class="container fade delay-6">
-        <a href="rsvp.html" class="page-link">RSVP</a>
-    </div>
+<!-- RSVP -->
+<div class="container fade delay-6">
+    <a href="{{ url_for('rsvp') }}" class="page-link">RSVP</a>
+</div>
 
-    <div class="container fade delay-7">
-        <div class="vertical-line"></div>
-    </div>
+<div class="container fade delay-7">
+    <div class="vertical-line"></div>
+</div>
 
-    <!-- Schedule-->
-    <div class="container fade delay-8">
-        <a class="page-link">SCHEDULE</a>
-    </div>
+<!-- Schedule -->
+<div class="container fade delay-8">
+    <a class="page-link">SCHEDULE</a>
+</div>
 
-    <div class="container fade delay-9">
-        <div class="vertical-line"></div>
-    </div>
+<div class="container fade delay-9">
+    <div class="vertical-line"></div>
+</div>
 
-    <!-- Travel and accommodation section -->
-    <div class="container fade delay-10">
-        <a href="travel.html" class="page-link">TRAVEL & ACCOMMODATION</a>
-    </div>
+<!-- Travel and accommodation -->
+<div class="container fade delay-10">
+    <a href="{{ url_for('travel') }}" class="page-link">TRAVEL & ACCOMMODATION</a>
+</div>
 
-    <div class="container fade delay-11">
-        <div class="vertical-line"></div>
-    </div>
+<div class="container fade delay-11">
+    <div class="vertical-line"></div>
+</div>
 
-    <!-- Dress Code -->
-    <div class="container fade delay-12">
-        <a class="page-link">DRESS CODE</a>
-    </div>
+<!-- Dress Code -->
+<div class="container fade delay-12">
+    <a class="page-link">DRESS CODE</a>
+</div>
 
-    <div class="container fade delay-13">
-        <div class="vertical-line"></div>
-    </div>
+<div class="container fade delay-13">
+    <div class="vertical-line"></div>
+</div>
 
-    <!-- footer -->
-    <footer class="container fade delay-14">
-        <div id="initials">E & D</div>
-        <div class="small-text">
-        <p>12.09.2026</p>
-        <p>Created by us</p>
-        <p>x</p>
-        </div>
-    </footer>
+{% endblock %}
 
-    <!-- Countdown Script -->
-    <script src="js/countdown.js"></script>
+{% block scripts %}
+<!-- Countdown Script -->
+<script src="{{ url_for('static', filename='/js/countdown.js') }}"></script>
 
-    <!-- script to play animation only once per browser session -->
-     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const hasVisited = sessionStorage.getItem("hasVisitedHome");
+<!-- TODO: move below script into it's on js file -->
+<!-- script to play animation only once per browser session -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const hasVisited = sessionStorage.getItem("hasVisitedHome");
 
-            if (hasVisited) {
+        if (hasVisited) {
             // user has already visited this session — skip animations
             document.querySelectorAll('.fade').forEach(el => {
                 el.style.opacity = "1";
                 el.style.transform = "none";
                 el.style.animation = "none";
             });
-            } else {
+        } else {
             // first visit — let animations play
             sessionStorage.setItem("hasVisitedHome", "true");
-            }
-        });
-    </script>
-</body>
-</html>
+        }
+    });
+</script>
+{% endblock %}
+
