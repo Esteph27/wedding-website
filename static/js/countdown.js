@@ -6,7 +6,7 @@ function updateCountdown() {
   const distance = weddingDate - now;
 
   if (distance < 0) {
-    document.getElementById("countdown").innerHTML = "It's Wedding Day! 🎉";
+    document.getElementById("countdown").innerHTML = "It's Wedding Day! 💒";
     return;
   }
 
@@ -14,7 +14,7 @@ function updateCountdown() {
   const days = Math.floor(distance / (1000 * 60 * 60 * 24));
 
   document.getElementById("countdown").innerHTML =
-    `${days} Days To Go`;
+    `${days} Days to go!`;
 }
 
 // Update every second
