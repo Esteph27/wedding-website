@@ -1,11 +1,19 @@
 from flask import Flask, render_template, request, redirect, session, url_for, jsonify
+from dotenv import load_dotenv
 import os
 
 app = Flask(__name__)
 
+# load environment variables from .env for local development
+load_dotenv()
+
 # get environment variables
 app.secret_key = os.getenv("FLASK_SECRET_KEY")
 PASSWORD = os.getenv("PASSWORD")
+# check password is set
+if PASSWORD is None:
+    raise RuntimeError("PASSWORD environment variable not set!")
+
 
 @app.route("/", methods=["GET", "POST"])
 def index():
@@ -13,10 +21,15 @@ def index():
     
     if request.method == "POST":
         password = request.form.get("password", "").strip().lower()
+        
+        if PASSWORD is None:
+            return jsonify({"success": False, "error": "server misconfigured"}), 500
+
         if password == PASSWORD.lower():
             session["authenticated"] = True
-            return jsonify({"success": True})
-        return jsonify({"success": False})
+            return jsonify({"success": True})  # JSON, redirect is handled in login.js
+        else:
+            return jsonify({"success": False})
 
     return render_template("index.html")
 
