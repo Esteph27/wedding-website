@@ -61,27 +61,7 @@
 {% endblock %}
 
 {% block scripts %}
-<!-- Countdown Script -->
 <script src="{{ url_for('static', filename='js/countdown.js') }}"></script>
-
-<!-- TODO: move below script into it's on js file -->
-<!-- script to play animation only once per browser session -->
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const hasVisited = sessionStorage.getItem("hasVisitedHome");
-
-        if (hasVisited) {
-            // user has already visited this session — skip animations
-            document.querySelectorAll('.fade').forEach(el => {
-                el.style.opacity = "1";
-                el.style.transform = "none";
-                el.style.animation = "none";
-            });
-        } else {
-            // first visit — let animations play
-            sessionStorage.setItem("hasVisitedHome", "true");
-        }
-    });
-</script>
+<script src="{{ url_for('static', filename='js/visited.js') }}"></script>
 {% endblock %}
 
