@@ -86,6 +86,7 @@ footer {
     background-color: #2A343D;
 }
 
+/* TODO: duplicate horizontal line, check if this is still needed */
 .horizontal-line {
   border: none;
   border-top: 1px solid #aaa;
@@ -202,7 +203,7 @@ footer {
 }
 
 /* ================================
-   Welcome page elements
+   Login page elements
 ================================ */
 #passwordInput {
   width: 100%;
@@ -231,27 +232,42 @@ footer {
 }
 
 #error {
-  color: #2A343D;
-  display: none;
-  margin-top: 20px;
-  font-size: 14px;
+    opacity: 0;
+    font-size: 14px;
+    color: #2A343D;
+}
+.error-visible {
+    opacity: 1 !important;
+}
+
+.shake {
+  animation: shake 0.5s ease;
 }
 
 #enter-button {
+  width: 100%;
+  max-width: 200px;
+  text-align: center;
+  position: relative;
   border: none;
-  width: 50%;
   font-family: "Monsieur La Doulaise", cursive;
   font-size: 42px;
   color: #2A343D;
   background: transparent;
   letter-spacing: 3px;
   transition: all 0.3s ease;
-  box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInSubtle 1.5s ease-out forwards; 
+  animation-delay: 3.5s;
+}
+
+/* TODO: make fadeInSubtle into it's own class */
+/* .fade-in {
   opacity: 0;
   transform: translateY(10px);
   animation: fadeInSubtle 1.5s ease-out forwards;
-  animation-delay: 3.5s;
-}
+} */
 
 #enter-button::after {
   content: "";
@@ -268,6 +284,15 @@ footer {
 
 #enter-button:hover::after {
   transform: translateX(-50%) scaleX(1);
+}
+
+#loginForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
 }
 
 .horizontal-line {
@@ -422,7 +447,6 @@ footer {
   animation: fadeInSubtle 0.6s ease forwards;
 }
 
-
 /* ================================
    Airbnb
 ================================ */
@@ -489,6 +513,7 @@ footer {
     transform: scaleX(1) translateY(0);
   }
 }
+
 @keyframes fadeInSubtle {
   from {
     opacity: 0;
@@ -524,6 +549,16 @@ footer {
     transform: translateY(0);
     letter-spacing: 3px;
   }
+}
+
+/* Shake animation for the error message */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-8px); }
+  40% { transform: translateX(8px); }
+  60% { transform: translateX(-8px); }
+  80% { transform: translateX(8px); }
+  100% { transform: translateX(0); }
 }
 
 /* ================================
