@@ -22,10 +22,17 @@
 <body>
     {% block content %}{% endblock %}
 
-    <!-- footer block as footer is not shown on all pages -->
-    {% block footer %}
-        {% include "footer.html" %}
-    {% endblock %}
+    <!-- block for footer as footer is not shown on the index page -->
+    {% if show_footer %}
+    <footer class="container {% if delay_footer %}fade delay-14{% endif %}"> 
+      <div id="initials">E & D</div>
+      <div class="small-text">
+          <p>12.09.2026</p>
+          <p>Created by us</p>
+          <p>x</p>
+      </div>
+    </footer>
+    {% endif %}
 
     {% block scripts %}{% endblock %}
 </body>

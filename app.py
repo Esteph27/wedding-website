@@ -31,7 +31,7 @@ def index():
         else:
             return jsonify({"success": False})
 
-    return render_template("index.html")
+    return render_template("index.html", show_footer=False)
 
 
 @app.route("/home")
@@ -39,19 +39,19 @@ def home():
 
     if not session.get("authenticated"):
         return redirect(url_for("index"))
-    return render_template("home.html")
+    return render_template("home.html", show_footer=True, delay_footer=True)
 
 @app.route("/rsvp")
 def rsvp():
-    return render_template("rsvp.html")
+    return render_template("rsvp.html", show_footer=True)
 
 @app.route("/travel")
 def travel():
-    return render_template("travel.html")
+    return render_template("travel.html", show_footer=True)
 
 @app.route("/airbnb")
 def airbnb():
-    return render_template("airbnb.html")
+    return render_template("airbnb.html", show_footer=True)
 
 if __name__ == "__main__":
     app.run(debug=True)
