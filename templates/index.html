@@ -7,16 +7,23 @@
     <div class="div-item">
         <h1 class="title">WELCOME</h1>
         <hr class="horizontal-line">
-        <input type="password" id="passwordInput" placeholder="Enter password here...">
-        <button id="enter-button" onclick="checkPassword()">Enter</button>
+        
+        <!-- Login Form -->
+        <form id="loginForm" method="POST">
+            <input id="passwordInput" type="password" name="password" placeholder="Enter password here..." required>
+            <button id="enter-button" type="submit">Enter</button>
+        </form>
+
+        <!-- error message shows when password is incorrect -->
         <p class="info" id="error">Incorrect password</p>
     </div>
 </div>
 {% endblock %}
 
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/login.js') }}"></script>
+{% endblock %}
+
 {% block footer %}{% endblock %}
 
-{% block scripts %}
-<script src="{{ url_for('static', filename='js/authenticate.js') }}"></script>
-{% endblock %}
 

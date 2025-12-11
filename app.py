@@ -1,14 +1,31 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, session, url_for, jsonify
+import os
 
 app = Flask(__name__)
 
-@app.route("/")
+# get environment variables
+app.secret_key = os.getenv("FLASK_SECRET_KEY")
+PASSWORD = os.getenv("PASSWORD")
+
+@app.route("/", methods=["GET", "POST"])
 def index():
-    # TODO: handle password more securely
+    '''handle log in'''
+    
+    if request.method == "POST":
+        password = request.form.get("password", "").strip().lower()
+        if password == PASSWORD.lower():
+            session["authenticated"] = True
+            return jsonify({"success": True})
+        return jsonify({"success": False})
+
     return render_template("index.html")
+
 
 @app.route("/home")
 def home():
+
+    if not session.get("authenticated"):
+        return redirect(url_for("index"))
     return render_template("home.html")
 
 @app.route("/rsvp")
