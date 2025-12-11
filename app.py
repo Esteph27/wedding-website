@@ -53,5 +53,9 @@ def travel():
 def airbnb():
     return render_template("airbnb.html", show_footer=True)
 
+@app.route("/deal")
+def deal():
+    return render_template("deal.html", show_footer=True)
+
 if __name__ == "__main__":
     app.run(debug=True)

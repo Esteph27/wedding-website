@@ -5,7 +5,7 @@
 {% block content %}
 
     <!-- title -->
-    <h1 class="smaller-title">Travel & Accommodation</h1>
+    <h1 class="title smaller-title">Travel & Accommodation</h1>
     <div class="container">
         <div class="vertical-line"></div>
     </div>
@@ -15,9 +15,8 @@
         <div>
             <h2>Guest Information</h2>
             <p>
-                The venue has kindly shared a detailed pdf with directions to the venue,
-                taxi numbers, and local accommodation options.  
-                We recommend reading it before you book.
+                The venue has kindly shared a detailed pdf that includes; directions to the venue,
+                taxi numbers, and local accommodation options. We highly recommend reading it.
             </p>
             <a href="https://drive.google.com/file/d/1Jb-G6_vhLb_B0ws1OmGAFyu8rJnRds3Q/view?usp=drive_link"
                target="_blank"
@@ -35,7 +34,6 @@
     <div class="info">
         <div>
             <h2>Airbnb Recommendations</h2>
-
             <p>
                 In case you're unsure where to book or need some ideas, we've put together 
                 a list of Airbnb options which we hope you find useful.
@@ -44,7 +42,6 @@
                 If you'd rather book a hotel, the venue has a list of their recommended hotels 
                 which you can find in their Guest Information guide linked above.
             </p>
-
             <a href="{{ url_for('airbnb') }}" class="page-link mt-4">Explore AirBnB</a>
         </div>
     </div>
@@ -56,9 +53,9 @@
     <!-- Things to do -->
     <div class="info">
         <div>
-            <h2>Nice Things to Do Nearby</h2>
-            <p>Coming Soon!</p>
-            <p>We're compiling a list of popular hot spots to visit whilst you're in Deal.</p>
+            <h2>Things to do in Deal</h2>
+            <p>If you're spending the weekend here, here's a list of must-see sights and experiences.</p>
+            <a href="{{ url_for('deal') }}" class="page-link mt-4">Explore Deal</a>
         </div>
     </div>
 

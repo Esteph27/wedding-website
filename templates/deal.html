@@ -1,0 +1,179 @@
+{% extends "base.html" %}
+
+{% block title %}Explore Deal{% endblock %}
+
+<!-- Bootstrap --> 
+{% block header %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+{% endblock %}
+
+{% block content %}
+    <!-- title -->
+     <div class="container">
+        <h1 class="title">Deal</h1>
+    </div>
+    
+    <div class="container">
+        <div class="vertical-line"></div>
+    </div>
+
+    <div id="thingsToDo">
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs airbnb-tabs" id="airbnbTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="two-tab" data-bs-toggle="tab"
+                data-bs-target="#two" type="button" role="tab">
+                Eat & Drink
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="four-tab" data-bs-toggle="tab"
+                data-bs-target="#four" type="button" role="tab">
+                Site See
+                </button>
+            </li>
+        </ul>
+
+        <!-- Tab content -->
+        <div class="tab-content mt-4" id="airbnbTabContent">
+
+            <!-- Eat & Drink-->
+            <div class="tab-pane fade show active" id="two" role="tabpanel">
+                <div class="airbnb-grid">
+
+                    <!-- restuants -->
+                    <div class="airbnb-card">
+                        <h3>The Rose</h3>
+                        <p>
+                            Also a hotel (which the venue have recommended as a beautiful place to stay).
+                            They also have an elegant restaurant serving fresh, locally sourced cuisine in a charming setting.
+                        </p>
+                        <a class="web-link" href"https://therosedeal.com/restaurant/" target="_blank">
+                            Book here
+                        </a>
+                    </div>
+
+                    <!-- restaurant/bar -->
+                    <div class="airbnb-card">
+                        <h3>Victuals & Co</h3>
+                        <p>A stylish restaurant and bar offering seasonal dishes, craft cocktails, and a relaxed, contemporary vibe.</p>
+                        <a class="web-link" href"https://www.victualsandco.com/" target="_blank">
+                            Visit the website
+                        </a>
+                    </div>
+
+                    <!-- pubs -->
+                    <div class="airbnb-card">
+                        <h3>The Kind's Head</h3>
+                        <p>The epitome of traditional english pubs. A classic seaside pub serving hearty meals, local ales, and a welcoming, historic atmosphere.</p>
+                        <a class="web-link" href"https://www.kingsheaddeal.co.uk/" target="_blank">
+                            Visit the website
+                        </a>
+                    </div>
+                     <div class="airbnb-card">
+                        <h3>The Ship Inn</h3>
+                       <p>A maritime decorated pub - as the name implies. A traditional seaside pub offering fresh seafood, local ales, and a warm atmosphere.</p>
+                        <a class="web-link" href"https://www.tripadvisor.co.uk/Attraction_Review-g503900-d3570081-Reviews-The_Ship_Inn-Deal_Kent_England.html" target="_blank">
+                            Tripadvisor
+                        </a>
+                    </div>
+                    
+                    <!-- cafes -->
+                    <div class="airbnb-card">
+                        <h3>Hog & Bean</h3>
+                        <p>
+                            A cosy independent café in Deal serving freshly roasted coffee, homemade brunch and lunch. Very cutesy vibe.
+                        </p>
+                        <a class="web-link" href"https://thehogandbean.co.uk/" target="_blank">
+                            Visit the website
+                        </a>
+                    </div>
+                    <div class="airbnb-card">
+                        <h3>Miletage Tea Station</h3>
+                        <p>
+                            A vintage and retro homewear store but also has a cafe in store - super kitsch.
+                        </p>
+                        <a class="web-link" href"https://www.tripadvisor.co.uk/Restaurant_Review-g503900-d4688848-Reviews-Mileage_Tea_Station-Deal_Kent_England.html" target="_blank">
+                            Tripadvisor
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Site see -->
+            <div class="tab-pane fade" id="four" role="tabpanel">
+                <div class="airbnb-grid">
+
+                    <!-- Deal castle -->
+                    <div class="airbnb-card">
+                        <h3>Deal Castle</h3>
+                        <p>A historic coastal fortress built by Henry VIII, perfect for exploring and enjoying stunning sea views</p>
+                        <a class="web-link" href"https://www.english-heritage.org.uk/visit/places/deal-castle/" target="_blank">
+                            Visit the website
+                        </a>
+                    </div>
+
+                    <!-- Deal old town -->
+                    <div class="airbnb-card">
+                        <h3>Deal old Town</h3>
+                        <p>A charming historic town full of quaint streets, independent shops, and cozy seaside cafés.</p>
+                        <a class="web-link" href"https://www.tripadvisor.co.uk/Attraction_Review-g503900-d4362984-Reviews-Deal_s_Old_Town-Deal_Kent_England.html" target="_blank">
+                            Tripadvisor
+                        </a>
+                    </div>
+
+                    <!-- Sandwich -->
+                    <div class="airbnb-card">
+                        <h3>Sandwich</h3>
+                        <p>If you have time it's worth visiting Sandwhich, one of the best preserved medieval towns in England. It's only a short drive from Deal.</p>
+                        <a class="web-link" href"https://www.whitecliffscountry.org.uk/explore/explore-locations/sandwich" target="_blank">
+                            Visit Sandwhich
+                        </a>
+                    </div>
+
+                    <!-- Deal Pier -->
+                    <div class="airbnb-card">
+                        <h3>Deal Pier</h3>
+                        <p>Deal Pier is a significant local landmark that offers excellent views of Deal sea front and features glass-walled cafe/restaurant at the end.</p>
+                        <a class="web-link" href"https://www.dover.gov.uk/Leisure-Culture-Tourism/Leisure-Facilities/Deal-Pier/Deal-Pier.aspx" target="_blank">
+                            Visit the Pier
+                        </a>
+                    </div>
+
+                    <!-- Deal Museum -->
+                    <div class="airbnb-card">
+                        <h3>Deal Museum</h3>
+                        <p>>A fascinating local museum showcasing Deal's rich maritime history and community heritage.</p>
+                        <a class="web-link" href"https://dealmuseum.uk/" target="_blank">
+                            Visit the website
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div> <!-- End of tab content -->
+    </div>
+
+    <!-- back to travel -->
+    <div class="container">
+        <div class="vertical-line"></div>
+    </div>
+    <div class="container">
+        <a href="{{ url_for('travel') }}" id="returnHome" class="page-link">Back to Travel & Accommodation</a>
+    </div>
+
+    <!-- return to home link -->
+    <div class="container">
+        <div class="vertical-line"></div>
+    </div>
+    <div class="container">
+        <a href="{{ url_for('home') }}" id="returnHome" class="page-link">Return To Home</a>
+    </div>
+
+    <div class="container">
+        <div class="vertical-line"></div>
+    </div>
+
+{% endblock %}
