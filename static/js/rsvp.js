@@ -1,3 +1,8 @@
+/**
+ * Handle RSVP logic:
+ * Shows/hides sections, handles dietary "Other" input, and submits the form without page reload.
+ */
+
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("rsvpForm");
   const attendingSelect = document.getElementById("attending");
@@ -51,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // --- handle RSVP form submission ---
   form.addEventListener("submit", async function (e) {
-    e.preventDefault();
+    e.preventDefault(); 
     const data = new FormData(form);
 
     const response = await fetch(form.action, {

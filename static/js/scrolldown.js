@@ -1,3 +1,6 @@
+/**
+ * Smoothly scrolls to target element when link is clicked.
+ */
 
 const link = document.getElementById('scroll-down-link');
 const target = document.getElementById('target');

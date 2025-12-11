@@ -1,4 +1,7 @@
-// AJAX script to handle login and prevent page reload on incorrect password
+/**
+ * AJAX script to handle login and prevent page reload on incorrect password
+ */
+
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.getElementById("loginForm");
     const errorMessage = document.getElementById("error");

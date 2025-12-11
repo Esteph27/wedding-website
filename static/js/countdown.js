@@ -1,4 +1,7 @@
-// Set the wedding date
+/**
+ * Calculates the number of days until the wedding
+ */ 
+
 const weddingDate = new Date("September 12, 2026 00:00:00").getTime();
 
 function updateCountdown() {
