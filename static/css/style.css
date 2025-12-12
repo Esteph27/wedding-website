@@ -92,6 +92,10 @@ footer {
   border-top: 1px solid #aaa;
 }
 
+/* ================================
+  links
+================================ */
+
 .page-link {
   position: relative;
   display: inline-block;
@@ -137,6 +141,9 @@ footer {
     color: #2A343D;
 }
 
+/* ================================
+  Text
+================================ */
 .small-text {
     font-family:"Bodoni Moda", serif;
     font-size: 16px;
@@ -163,6 +170,13 @@ footer {
   letter-spacing: 3px;
   margin-bottom: 2rem;
 }
+
+.info .fancy {
+  font-family: 'Monsieur La Doulaise', cursive;
+  font-size: 48px;
+  margin-top: 0;
+}
+
 
 .info a {
     font-size: 20px;
@@ -254,13 +268,6 @@ footer {
   animation: fadeInSubtle 1.5s ease-out forwards; 
   animation-delay: 3.5s;
 }
-
-/* TODO: make fadeInSubtle into it's own class */
-/* .fade-in {
-  opacity: 0;
-  transform: translateY(10px);
-  animation: fadeInSubtle 1.5s ease-out forwards;
-} */
 
 #enter-button::after {
   content: "";
@@ -492,6 +499,22 @@ footer {
 }
 
 /* ================================
+  Images
+================================ */
+
+.dresscode-gallery {
+  width: 100%;
+}
+
+.full-moodboard {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* ================================
    Animations
 ================================ */
 @keyframes expandIn {
@@ -514,6 +537,19 @@ footer {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* TODO: make fadeInSubtle into it's own class */
+.fade-in-subtle {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInSubtle 2.5s ease-out forwards;
 }
 
 @keyframes fadeUp {
