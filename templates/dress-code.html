@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Dress Code{% endblock %}
+
+{% block content %}
+
+    <!-- title -->
+    <h1 class="title smaller-title">Dress Code</h1>
+    <div class="container">
+        <div class="vertical-line"></div>
+    </div>
+
+    <!-- ice breaker -->
+    <div class="info">
+        <div>
+            <h2>Black Tie & Formal</h2>
+        </div>
+    </div>
+
+   
+    <div class="container">
+        <div class="vertical-line"></div>
+    </div>
+
+    <!-- return to home link -->
+    <div class="container">
+        <a href="{{ url_for('home') }}" id="returnHome" class="page-link">Return To Home</a>
+    </div>
+
+{% endblock %}

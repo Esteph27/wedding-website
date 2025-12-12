@@ -41,25 +41,35 @@ def home():
         return redirect(url_for("index"))
     return render_template("home.html", show_footer=True, delay_footer=True)
 
+
 @app.route("/rsvp")
 def rsvp():
     return render_template("rsvp.html", show_footer=True)
+
 
 @app.route("/travel")
 def travel():
     return render_template("travel.html", show_footer=True)
 
+
 @app.route("/airbnb")
 def airbnb():
     return render_template("airbnb.html", show_footer=True)
+
 
 @app.route("/deal")
 def deal():
     return render_template("deal.html", show_footer=True)
 
+
 @app.route("/schedule")
 def schedule():
     return render_template("schedule.html", show_footer=True)
+
+
+@app.route("/dress-code")
+def dress_code():
+    return render_template("dress-code.html", show_footer=True)
 
 if __name__ == "__main__":
     app.run(debug=True)
