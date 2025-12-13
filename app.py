@@ -75,5 +75,9 @@ def dress_code():
 def faq():
     return render_template("faq.html", show_footer=True)
 
+@app.route("/registry")
+def registry():
+    return render_template("registry.html", show_footer=True)
+
 if __name__ == "__main__":
     app.run(debug=True)
