@@ -2,17 +2,222 @@
 
 {% block title %}FAQ{% endblock %}
 
+<!-- Bootstrap --> 
+{% block header %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+{% endblock %}
+
 {% block content %}
 
     <!-- title -->
-    <h1 class="title smaller-title">FAQ</h1>
+    <div class="container">
+        <h1 class="title">FAQ</h1>
+    </div>
     <div class="container">
         <div class="vertical-line"></div>
     </div>
 
-    <div class="info">
-        <div>
-            <p>FAQs here</p>
+    <div class="accordion accordion-flus text-center" id="accordionFlushExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                <p>When and where is the wedding?</p>
+            </button>
+            </h2>
+            <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    <p>
+                        The ceremony and reception will take place at Ripple Court Estate,
+                        Ripple, Deal, CT14 8HX on 12th September 2026.
+                        <br>
+                        Full details can be found on the <a href="{{ url_for('schedule') }}">Schedule</a> page.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                <p>What time should I arrive?</p>
+            </button>
+            </h2>
+            <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    <p>
+                        We recommend arriving at 1:30pm so you can grab a welcome drink and have time to get
+                        settled before things begin.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                <p>Can I bring children?</p>
+            </button>
+            </h2>
+            <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    <p>
+                        No. We love your little ones, but we're keeping the day adults-only so you can relax and enjoy
+                        a night off with us! Thank you for understanding.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                <p>How do I get there?</p>
+            </button>
+            </h2>
+            <div id="flush-collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    <p>
+                        The venue is accessible by car and train. Detailed directions to the venue and travel tips are
+                        provided in the Guest Information Guide on page 9.
+                    </p>
+                    <a href="https://drive.google.com/file/d/1Jb-G6_vhLb_B0ws1OmGAFyu8rJnRds3Q/view?usp=drive_link"
+                        target="_blank">View Guest Information here
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                <p>Is there parking at the Venue?</p>
+            </button>
+            </h2>
+            <div id="flush-collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    <p>
+                        Altough there is parking at the venue, on the day of the wedding parking will be reserved for parents of the Bride and Groom and our vendors.
+                        On the day of the wedding, we recommend everyone to pre-book and share taxis in order to avoid traffic in and out the venue.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSix" aria-expanded="false" aria-controls="flush-collapseSix">
+                <p>Will Transport be arranged?</p>
+            </button>
+            </h2>
+            <div id="flush-collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    <p>
+                        No. Taxis are readily available from Deal and nearby villages. We recommend booking taxis in
+                        advance for late-night returns.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseSeven" aria-expanded="false" aria-controls="flush-collapseSeven">
+                <p>What is the dress code?</p>
+            </button>
+            </h2>
+            <div id="flush-collapseSeven" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    <p>
+                        The dress code is Black Tie. We've included a moodboard on the 
+                        <a href="{{ url_for('dress_code') }}">Dress Code</a> page to give a sense of the vibe.
+                        Kindly avoid wearing white (men's shirt are fine) — everything else is welcome!
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseEight" aria-expanded="false" aria-controls="flush-collapseEight">
+                <p>Will food and drink be provided?</p>
+            </button>
+            </h2>
+            <div id="flush-collapseEight" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    <p>
+                        Yes — food and drinks will be provided throughout the day and evening.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseNine" aria-expanded="false" aria-controls="flush-collapseNine">
+                <p>Can you cater for dietary requirements?</p>
+            </button>
+            </h2>
+            <div id="flush-collapseNine" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    <p>
+                        Absolutely. Please let us know any dietary requirements when you RSVP.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTen" aria-expanded="false" aria-controls="flush-collapseTen">
+                <p>Is the venue accessible?</p>
+            </button>
+            </h2>
+            <div id="flush-collapseTen" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    <p>
+                        Ripple Court Estate is an historic property with both indoor and outdoor spaces.
+                        If you have accessibility needs, please contact us in advance so we can confirm the 
+                        most suitable access routes and make any necessary arrangements.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseEleven" aria-expanded="false" aria-controls="flush-collapseEleven">
+                <p>Can we take photos or share on social media?</p>
+            </button>
+            </h2>
+            <div id="flush-collapseEleven" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    <p>
+                        We'd love you to take photos and share memories! 
+                        We kindly ask that phones are kept away during the ceremony itself as we have a professional
+                        photographer and videographer.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwelve" aria-expanded="false" aria-controls="flush-collapseTwelve">
+                <p>When should we RSVP?</p>
+            </button>
+            </h2>
+            <div id="flush-collapseTwelve" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    <p>
+                        Please RSVP by 12th March. This helps us plan the day properly — thank you!
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThirteen" aria-expanded="false" aria-controls="flush-collapseThirteen">
+                <p>Who can I contact if I have questions?</p>
+            </button>
+            </h2>
+            <div id="flush-collapseThirteen" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                    <p>
+                        If you have any questions at all, please contact Esteph (07870592673) 
+                        or David (07557915143).
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
 
