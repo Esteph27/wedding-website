@@ -71,5 +71,9 @@ def schedule():
 def dress_code():
     return render_template("dress-code.html", show_footer=True)
 
+@app.route("/faq")
+def faq():
+    return render_template("faq.html", show_footer=True)
+
 if __name__ == "__main__":
     app.run(debug=True)

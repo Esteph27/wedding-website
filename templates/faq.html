@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}FAQ{% endblock %}
+
+{% block content %}
+
+    <!-- title -->
+    <h1 class="title smaller-title">FAQ</h1>
+    <div class="container">
+        <div class="vertical-line"></div>
+    </div>
+
+    <div class="info">
+        <div>
+            <p>FAQs here</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="vertical-line"></div>
+    </div>
+
+    <!-- return to home link -->
+    <div class="container">
+        <a href="{{ url_for('home') }}" id="returnHome" class="page-link">Return To Home</a>
+    </div>
+
+{% endblock %}
