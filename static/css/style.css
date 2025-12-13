@@ -130,15 +130,21 @@ footer {
 }
 
 .web-link {
-    text-decoration: none;
-    color: #2A343D;
+  text-decoration: none;
+  color: #2A343D;
 }
 
 .web-link:hover {
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 4px; 
-    color: #2A343D;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px; 
+  color: #2A343D;
+}
+
+.highlight-link {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  color: #2A343D;
 }
 
 /* ================================
@@ -514,6 +520,24 @@ footer {
 
 .accordion-flush .accordion-item {
   margin-top: 1rem;
+}
+
+.accordion-flush .accordion-button:not(.collapsed)  {
+  background-color: #2A343D;
+}
+
+.accordion-flush .accordion-button:not(.collapsed) .accordion-title p {
+  color: white;
+}
+
+.accordion-flush .accordion-button:focus,
+.accordion-flush .accordion-button:active {
+  box-shadow: none;
+  outline: none;
+}
+
+.accordion-flush .accordion-button:not(.collapsed) {
+    box-shadow: none;
 }
 
 /* ================================
