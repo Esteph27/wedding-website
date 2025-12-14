@@ -9,12 +9,12 @@ By building the site from scratch, I was able to design and implement a solution
 
 The website centralises all essential wedding information in a single application, including event details, venue and travel information, FAQs, Dress code and the ability to RSVP online. From a technical perspective, the project combines frontend development for layout and styling with backend logic for routing, templating, password validation, and form handling via an external API.
 
-This is a full-stack web application built using Flask, Python, HTML, CSS, and JavaScript, and deployed on Fly.io. By enabling digital RSVPs, the website also helps to reduce unnecessary waste associated with traditional paper invitations and RSVP cards, while prioritising clean design, maintainability, and responsive behaviour across devices.
+This is a full-stack web application built using Flask, Python, HTML, CSS, and JavaScript, and deployed on Fly.io. By enabling digital RSVPs, it helps to reduce unnecessary waste associated with traditional paper invitations and RSVP cards, while prioritising clean design, maintainability, and responsive behaviour across devices.
 
 ## Project Status
 
 At the time of submission, the wedding is scheduled for next year. 
-Some details will be updated after the CS50 submission deadline as wedding plans are finalised. The core structure and functionality will remain unchnaged.
+Some details will be updated after the CS50 submission deadline as wedding plans are finalised. The core structure and functionality will remain unchanged.
 
 ## Features
 
@@ -26,7 +26,7 @@ Some details will be updated after the CS50 submission deadline as wedding plans
 
 - FAQs, registry, and dress code details
 
-- RSVP form integrated with Formspree for form submission handling
+- RSVP form integrated with Freeform for submission handling and dashboard viewing
 
 - Client-side form validation using JavaScript
 
@@ -34,7 +34,7 @@ Some details will be updated after the CS50 submission deadline as wedding plans
 
 - Backend routing and templating using Flask
 
-- Automated deployment to Fly.io using GitHub Actions, enabling instant updates to the live site
+- Automated deployment to Fly.io using Docker and GitHub Actions, enabling instant updates to the live site
 
 - Hosted on a custom domain
 
@@ -53,26 +53,40 @@ Some details will be updated after the CS50 submission deadline as wedding plans
 - **Freeform**: Used to handle RSVP form submissions and view responses without 
 implementing a database.
 
-- **Fly.io**: Used to deploy and host the application.
+- **Fly.io**: Used to host the application.
 
-I chose not to use a database for this project because Freeform provides a simple and effective way to collect and view form submissions. Since the number of RSVP responses is limited and does not require complex querying or relationships, a database would have added unnecessary complexity.
+- **Github Actions**: Automates deployment, integrated with Fly.io.
+
+- **Docker**: Used to containerise the application for deployment on Fly.io.
+
+- **Custom Domain**: Personalises our web address 
 
 
 ## File Structure
 
-## Design 
+## Design
 
-#### formspree:
-## Database and Form Handling Decision
+#### Frontend
 
-A deliberate design decision in this project was not to use a traditional SQL database for storing RSVP responses. While a database was considered, it was ultimately not necessary for the scope and requirements of this application.
+The frontend is built using HTML, CSS, and JavaScript. HTML provides the structural layout of the website, while CSS is responsible for styling, animations, and responsive layouts across mobile and desktop devices. JavaScript is used to enhance interactivity and dynamic behaviour, such as adapting form fields based on user input (for example, conditionally displaying additional fields for dietary requirements), handling login, implementing a countdown to the wedding date, and enabling smooth scrolling between sections.
 
-The RSVP functionality is implemented using a third-party form handling service (Formspree / Freeform), which collects and presents submissions in a structured format. This approach was chosen because the data does not require complex querying, relationships, or long-term persistence within the application itself. RSVP responses only need to be viewed, not modified or processed programmatically.
+This combination ensures a smooth, user-friendly experience while keeping the frontend logic focused on usability and presentation, with form submission and validation delegated to an external service.
 
-Using a third-party service allowed the project to remain lightweight while still demonstrating key concepts such as form validation, HTTP requests, and integration with external tools. It also reflects real-world development practices, where existing services are often used to reduce complexity and maintenance overhead.
+#### Backend
 
-This decision allowed me to focus on application structure, frontend development, backend routing with Flask, and deployment automation, rather than introducing a database solely for the sake of using SQL.
+The backend is built using Flask, which handles routing, templating, and overall application structure. Pages use Jinja templates to render content dynamically and password-protected access ensures that only invited guests can view the content of the website. Backend logic also manages form validation and integration with Freeform. This separation of concerns keeps the backend focused on application logic while the frontend handles presentation and interactivity.
 
+#### RSVP form Handling
+
+The RSVP form is implemented using [Formspree](https://formspree.io/), a third-party service that handles form submissions securely, including data validation. Formspree also provides email notifications, a dashboard to view all submissions, and analytics.
+
+Because Formspree effectively manages all aspects of form collection and viewing, I chose not to use a database for this project. While a database was initially considered, it was unnecessary: the data does not require complex querying, relationships, or long-term persistence within the application. RSVP responses only need to be viewed, not modified or processed programmatically.
+
+This approach keeps the website lightweight while taking advantage of Formspree’s built-in features, including email notifications for each submission, which makes it easy to track RSVPs in real time.
+
+<img src="static/images/formspree.jpg" alt="Formspree Dashboard" width="600">
+
+*Screenshot shows example responses in the Formspree dashboard. All data is test information.*
 
 ## How to run the project locally
 
