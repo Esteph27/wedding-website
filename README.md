@@ -9,9 +9,9 @@ At the time of choosing a project to submit as part of CS50, I had recently book
 
 By building the site from scratch, I was able to design and implement a solution tailored to my requirements rather than adapting my needs to an existing platform, making the project both practical and personally meaningful.
 
-The website centralises all essential wedding information in a single application, including event details, venue and travel information, FAQs, Dress code and the ability to RSVP online. From a technical perspective, the project combines frontend development for layout and styling with backend logic for routing, templating, password validation, and form handling via an external API.
+The website centralises all essential wedding information in a single application, including event details, venue and travel information, FAQs, Dress code and the ability to RSVP online.
 
-This is a full-stack web application built using Flask, Python, HTML, CSS, and JavaScript, and deployed on Fly.io. By enabling digital RSVPs, it helps to reduce unnecessary waste associated with traditional paper invitations and RSVP cards, while prioritising clean design, maintainability, and responsive behaviour across devices.
+The project combines frontend development for layout and styling with backend logic for routing, templating, authentication, and form handling via an external API. This is a full-stack web application built using Flask, Python, HTML, CSS, and JavaScript, and deployed on Fly.io. 
 
 ## Project Status
 
@@ -120,6 +120,19 @@ Password validation is handled on the backend using environment variables, with 
 
 This separation of concerns keeps the backend focused on application logic and security, while the frontend handles presentation and interactivity.
 
+#### Authentication flow
+
+The application uses a simple password-based authentication mechanism. Login is handled using an AJAX request (`login.js`) rather than a traditional server-side redirect. This design was chosen to:
+
+- Prevent full page reloads on failed login attempts
+- Allow client-side error handling and animations
+- Avoid re-triggering page animations on incorrect passwords
+
+The Flask `/` route always returns JSON responses for login attempts. On successful authentication, the frontend JavaScript performs the redirect to `/home`.
+
+**Note:**  
+This authentication flow evolved during deployment to Fly.io, where a server-side redirect caused issues with form submission using an incorrect password. The final implementation was adopted intentionally to improve reliability and user experience. Further details are documented in the **Bug Fixes** section.
+
 #### RSVP form Handling
 
 The RSVP form is implemented using [Formspree](https://formspree.io/), a third-party service that handles form submissions securely, including data validation. Formspree also provides email notifications, a dashboard to view all submissions, and analytics.
@@ -147,7 +160,11 @@ Deployment is automated using Fly.io’s integration with GitHub Actions. When t
 
 Any changes pushed to the repository are automatically deployed to the live site, reducing manual steps and ensuring consistency between local development and production. While additional automation or features could be added, this workflow provides sufficient functionality for the scope of the website.
 
-#### Testing
+## Manual testing
+
+Manual testing was carried out to verify core user flows and ensure the application behaves as expected in a production environment. This included testing authentication, navigation between pages, and access control for protected routes, as well as validating user-facing interactions such as error messages and animations.
+
+Tests and results are documented in [`docs/manual-testing.md`](docs/manual-testing.md).
 
 ## How to run locally
 
@@ -232,39 +249,57 @@ The wedding website is deployed on [Fly.io](https://fly.io/), which allows the F
 
 ## Linters
 
+To maintain code quality and consistency, the following tools were used:
+
+### Backend (Python)
+- **Flake8**  
+    Used to enforce PEP8 style guidelines and identify common issues such as unused imports and formatting inconsistencies in the Flask application.
+
+    https://flake8.pycqa.org/en/latest/
+
+### Accessability
+- **Lighthouse**  
+    Used to audit performance, accessibility, best practices, and SEO for the deployed site.
+    
+    https://developer.chrome.com/docs/lighthouse/overview
+
 ## Bug fixes and known bugs
 
-#### Fixing the 500 Error on Fly.io Login
+#### Error 1: Login redirect causing 500 error in production
 
-When deploying the login page to Fly.io, you may encounter a 500 Internal Server Error when entering the correct password.
+When deploying the login page to Fly.io, entering the correct password resulted in a `500 Internal Server Error`.
 
-Cause:
+**Cause**
 
-The Flask index() route was using redirect() for successful login. Since the login form uses AJAX, the redirect response breaks JSON parsing in the browser.
+- The Flask `index()` route originally used `redirect()` on successful login.
+- The login form submits via AJAX, so the redirect response broke JSON parsing.
+- Additionally, `session["authenticated"]` requires `app.secret_key` to be set.
+- Without a `FLASK_SECRET_KEY`, Flask raises a 500 error when setting the session.
 
-session["authenticated"] requires app.secret_key to be set. Without a FLASK_SECRET_KEY in the environment, setting the session triggers a 500 error.
+**Solution**
 
-Solution:
+As described in the Authentication Flow section, login handling was moved fully
+to the client side:
 
-Remove the server-side redirect — the index() route now returns JSON for both success and failure, and login.js handles the redirect:
-
-```
+```python
 if password == PASSWORD.lower():
     session["authenticated"] = True
-    return jsonify({"success": True})  # JS handles redirect
+    return jsonify({"success": True})  # Redirect handled in login.js
 ```
 
-Set the required secrets in Fly.io:
+Required secrets were also added to Fly.io:
 
-```fly secrets set FLASK_SECRET_KEY="some-long-random-string"```
-```fly secrets set PASSWORD="your-password-here"```
+```
+fly secrets set FLASK_SECRET_KEY="my-flask-secret-key"
+fly secrets set PASSWORD="my-password"
+```
 
+**Result**:
+- Wrong password → error message with shake animation appears
 
-Result:
-Wrong password → error message with shake animation appears
-Correct password → JSON response → JS redirects to /home
+- Correct password → JSON response → JS redirects to /home
 
-No more 500 errors in production
+- No more 500 errors in production
 
 
 ## Acknowledgements
@@ -279,4 +314,4 @@ No more 500 errors in production
 
 - Friends and family for testing the website and providing feedback on usability and design.
 
-- My Fiance David for always supporting me ❤️
+- My Fiance David for always supporting me ❤️ 
