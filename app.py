@@ -1,8 +1,11 @@
 from flask import Flask, render_template, request, redirect, session, url_for, jsonify
 from dotenv import load_dotenv
+from helpers import login_required
 import os
 
 app = Flask(__name__)
+
+# TODO: cleanup comments and add doc strings to functions
 
 # load environment variables from .env for local development
 load_dotenv()
@@ -32,50 +35,56 @@ def index():
             return jsonify({"success": False})
 
     return render_template("index.html", show_footer=False)
-
+ 
 
 @app.route("/home")
+@login_required
 def home():
-
-    if not session.get("authenticated"):
-        return redirect(url_for("index"))
     return render_template("home.html", show_footer=True, delay_footer=True)
 
 
 @app.route("/rsvp")
+@login_required
 def rsvp():
     return render_template("rsvp.html", show_footer=True)
 
 
 @app.route("/travel")
+@login_required
 def travel():
     return render_template("travel.html", show_footer=True)
 
 
 @app.route("/airbnb")
+@login_required
 def airbnb():
     return render_template("airbnb.html", show_footer=True)
 
 
 @app.route("/deal")
+@login_required
 def deal():
     return render_template("deal.html", show_footer=True)
 
 
 @app.route("/schedule")
+@login_required
 def schedule():
     return render_template("schedule.html", show_footer=True)
 
 
 @app.route("/dress-code")
+@login_required
 def dress_code():
     return render_template("dress-code.html", show_footer=True)
 
 @app.route("/faq")
+@login_required
 def faq():
     return render_template("faq.html", show_footer=True)
 
 @app.route("/registry")
+@login_required
 def registry():
     return render_template("registry.html", show_footer=True)
 
