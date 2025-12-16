@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, session, url_for, jsonify
+from flask import Flask, render_template, request, session, jsonify
 from dotenv import load_dotenv
 from helpers import login_required
 import os
@@ -25,28 +25,24 @@ if PASSWORD is None:
 def index():
     '''
     Login page
-    
     - GET: render login form
     - POST: validate password and create authenticated session
-    
     Authentication state is stored in the Flask session.
     '''
-    
     if request.method == "POST":
         password = request.form.get("password", "").strip().lower()
-        
         if PASSWORD is None:
-            return jsonify({"success": False, "error": "server misconfigured"}), 500
-
+            return jsonify(
+                {"success": False, "error": "server misconfigured"}
+                ), 500
         if password == PASSWORD.lower():
             session["authenticated"] = True
             # redirect is handled in login.js
             return jsonify({"success": True})
         else:
             return jsonify({"success": False})
-
     return render_template("index.html", show_footer=False)
- 
+
 
 @app.route("/home")
 @login_required
@@ -89,15 +85,18 @@ def schedule():
 def dress_code():
     return render_template("dress-code.html", show_footer=True)
 
+
 @app.route("/faq")
 @login_required
 def faq():
     return render_template("faq.html", show_footer=True)
 
+
 @app.route("/registry")
 @login_required
 def registry():
     return render_template("registry.html", show_footer=True)
+
 
 # Entry point
 if __name__ == "__main__":
