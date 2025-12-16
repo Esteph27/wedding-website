@@ -3,15 +3,18 @@ from dotenv import load_dotenv
 from helpers import login_required
 import os
 
+# Congigure app
 app = Flask(__name__)
 
-# TODO: cleanup comments and add doc strings to functions
-
-# load environment variables from .env for local development
+# Load environment variables from .env (local development only)
+# https://pypi.org/project/python-dotenv/
 load_dotenv()
 
-# get environment variables
+# Required for Flask secure `sessions`
+# https://flask.palletsprojects.com/en/latest/quickstart/#sessions
 app.secret_key = os.getenv("FLASK_SECRET_KEY")
+
+# Get password
 PASSWORD = os.getenv("PASSWORD")
 # check password is set
 if PASSWORD is None:
@@ -20,7 +23,14 @@ if PASSWORD is None:
 
 @app.route("/", methods=["GET", "POST"])
 def index():
-    '''handle log in'''
+    '''
+    Login page
+    
+    - GET: render login form
+    - POST: validate password and create authenticated session
+    
+    Authentication state is stored in the Flask session.
+    '''
     
     if request.method == "POST":
         password = request.form.get("password", "").strip().lower()
@@ -30,7 +40,8 @@ def index():
 
         if password == PASSWORD.lower():
             session["authenticated"] = True
-            return jsonify({"success": True})  # JSON, redirect is handled in login.js
+            # redirect is handled in login.js
+            return jsonify({"success": True})
         else:
             return jsonify({"success": False})
 
@@ -88,5 +99,8 @@ def faq():
 def registry():
     return render_template("registry.html", show_footer=True)
 
+# Entry point
 if __name__ == "__main__":
+    # Debug mode should be disabled in production
+    # https://flask.palletsprojects.com/en/latest/deploying/
     app.run(debug=True)
