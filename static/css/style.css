@@ -146,14 +146,8 @@ footer {
 
 .info .registry-link {
   font-family: 'Monsieur La Doulaise', cursive;
-  font-size: 32px;
+  font-size: 34px;
   letter-spacing: 2px;
-  color: #2A343D;
-}
-
-.info .registry-link:hover {
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
   color: #2A343D;
 }
 
