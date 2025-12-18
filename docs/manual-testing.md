@@ -36,7 +36,7 @@
 | 32 | Fade Animations | Fade animations work on home page | Elements fade in sequentially with delays | Elements fade in sequentially with delays | Pass |
 | 33 | Footer Display | Footer shows on authenticated pages | Footer shows "E & D", date "12.09.2026", "Created by us" | Footer shows "E & D", date "12.09.2026", "Created by us" | Pass |
 | 34 | Footer Hidden on Login | Footer hidden on login page | No footer displayed | No footer displayed | Pass |
-| 35 | Scroll Down Functionality | RSVP scroll down link works | Page scrolls smoothly to form | Page scrolls smoothly to form | Pass |
+| 35 | Scroll Down and Up Functionality | Scroll down and up links works | Page scrolls smoothly down to RSVP or up to top of page| Page scrolls smoothly to form and scrolls smoothly back up to top of page | Pass |
 | 36 | External Links | External links open in new tab | Opens in new tab/window | Opens in new tab/window | Pass |
 | 37 | Password Input Type | Password field is hidden | Characters are masked (dots) | Characters are masked (dots) | Pass |
 | 38 | Error Message Animation | Error message shakes on wrong password | Error message appears with shake animation | Error message appears with shake animation | Pass |

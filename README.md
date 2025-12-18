@@ -76,6 +76,7 @@ implementing a database.
 │   │   ├── login.js            # Prevents page reload on incorrect password
 │   │   ├── rsvp.js             # RSVP form interactivity
 │   │   ├── scrolldown.js       # Scroll down function
+|   |   ├── scrollup.js         # Scroll up function
 │   │   └── visited.js          # Prevents home page animations on repeat visits
 │   └── images/
 │       ├── formspree.jpg       # Screenshot used in README
