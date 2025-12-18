@@ -296,6 +296,19 @@ fly secrets set PASSWORD="my-password"
 
 - No more 500 errors in production
 
+#### Error 2: RSVP form validation error for conditional fields
+
+When submitting the RSVP form with empty fields, the browser raised an
+`An invalid form control is not focusable` error.
+
+**Cause**
+
+A `required` dietary field was hidden based on user input while still being marked as required.
+
+**Solution**
+
+Required attributes are now dynamically toggled in JavaScript (rsvp.js) based on field visibility, ensuring HTML5 validation behaves correctly.
+
 
 ## Acknowledgements
 
