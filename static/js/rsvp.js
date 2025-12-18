@@ -9,41 +9,34 @@ document.addEventListener("DOMContentLoaded", () => {
   const guestAttending = document.getElementById("guestAttending");
   const guestNotAttending = document.getElementById("guestNotAttending");
   const postRsvpOptions = document.getElementById("postRsvpOptions");
-  const dietSelect = document.getElementById("dietry");
+  const dietSelect = document.getElementById("dietary");
   const otherDietContainer = document.getElementById("otherDietContainer");
   const otherDietInput = document.getElementById("otherDiet");
 
   // --- handle attending logic ---
   attendingSelect.addEventListener("change", function () {
-    const requiredFields = guestAttending.querySelectorAll("[required]");
-  
+    const requiredFields = guestAttending.querySelectorAll("[name='dietary'], [name='otherDiet']");
+
     if (this.value === "yes") {
-      guestAttending.classList.add("show-content");
       guestAttending.classList.remove("hidden-section");
-      guestNotAttending.classList.remove("show-content");
-      guestNotAttending.classList.add("hidden-section");
-  
-      // Re-enable required fields
-      requiredFields.forEach((field) => field.disabled = false);
-    } else if (this.value === "no") {
-      guestAttending.classList.remove("show-content");
-      guestAttending.classList.add("hidden-section");
-      guestNotAttending.classList.remove("show-content");
-      guestNotAttending.classList.add("hidden-section");
-  
-      // Disable required fields so the form can submit
-      requiredFields.forEach((field) => field.disabled = true);
+      guestAttending.classList.add("show-content");
+      // add 'required' attribute 
+      requiredFields.forEach((field) => {
+        field.disabled = false;
+        field.required = true;
+      });
+
     } else {
-      guestAttending.classList.remove("show-content");
       guestAttending.classList.add("hidden-section");
-      guestNotAttending.classList.remove("show-content");
-      guestNotAttending.classList.add("hidden-section");
-  
-      // Also disable required fields by default
-      requiredFields.forEach((field) => field.disabled = true);
+      guestAttending.classList.remove("show-content");
+      // remove 'required' attribute
+      requiredFields.forEach((field) => {
+        field.disabled = true;
+        field.required = false;
+      });
     }
   });
-  
+
   // --- handle dietary "other" logic ---
   dietSelect.addEventListener("change", function () {
     const isOther = this.value === "other";
