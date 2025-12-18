@@ -272,4 +272,15 @@
         <a href="{{ url_for('home') }}" class="page-link">Return To Home</a>
     </div>
 
+    <!-- scroll to top -->
+    <div class="container">
+        <div class="vertical-line"></div>
+    </div>
+    <div id="scroll-up-link" class="container info">
+        <p class="page-link">Back to Top</p>
+    </div>
+
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/scrollup.js') }}"></script>
 {% endblock %}

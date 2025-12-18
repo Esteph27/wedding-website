@@ -22,7 +22,7 @@
             </p>
             <a href="https://drive.google.com/file/d/1Jb-G6_vhLb_B0ws1OmGAFyu8rJnRds3Q/view?usp=drive_link"
                target="_blank"
-               class="page-link">
+               class="button-link">
                View Guest Information here
             </a>
         </div>
@@ -44,7 +44,7 @@
                 If you'd rather book a hotel, the venue has a list of their recommended hotels 
                 which you can find in their Guest Information guide linked above.
             </p>
-            <a href="{{ url_for('airbnb') }}" class="page-link mt-4">Explore AirBnB</a>
+            <a href="{{ url_for('airbnb') }}" class="button-link">Explore AirBnB</a>
         </div>
     </div>
 
@@ -57,7 +57,7 @@
         <div>
             <h2>Things to do in Deal</h2>
             <p>If you're spending the weekend here, here's a list of must-see sights and experiences.</p>
-            <a href="{{ url_for('deal') }}" class="page-link mt-4">Explore Deal</a>
+            <a href="{{ url_for('deal') }}" class="button-link">Explore Deal</a>
         </div>
     </div>
 
@@ -70,6 +70,17 @@
         <a href="{{ url_for('home') }}" class="page-link">Return To Home</a>
     </div>
 
+    <!-- scroll to top -->
+    <div class="container">
+        <div class="vertical-line"></div>
+    </div>
+    <div id="scroll-up-link" class="container info">
+        <p class="page-link">Back to Top</p>
+    </div>
+
 {% endblock %}
 
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/scrollup.js') }}"></script>
+{% endblock %}
 

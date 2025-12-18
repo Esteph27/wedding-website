@@ -36,10 +36,10 @@ a {
   
 footer {
   font-family: 'Monsieur La Doulaise', cursive;
-  margin-top: 60px;
+  margin-top: 70px;
   margin-bottom: 60px;
   font-size: 48px;
-  color: #5F6265;
+  color: #4C555E;
   display: flex;
   flex-direction: column; 
   align-items: center;
@@ -88,6 +88,10 @@ footer {
   transform: translateY(10px);
   animation: fadeInSubtle 1.5s ease-out forwards;
   animation-delay: 2.5s;
+}
+
+#scroll-up-link p {
+  font-size: 18px;
 }
 
 /* ================================
@@ -151,6 +155,28 @@ footer {
   color: #2A343D;
 }
 
+.button-link {
+  display: inline-block;
+  padding: 12px 36px;
+  font-family: "Bodoni Moda", serif;
+  font-size: 20px;
+  letter-spacing: 3px;
+  color: #2A343D;
+  background-color: transparent;
+  border: 1px solid #2A343D;
+  border-radius: none;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 1rem;
+}
+
+.button-link:hover {
+  color: white;
+  background-color: #2A343D;
+  transform: scale(1.03);
+}
+
 /* ================================
   Text
 ================================ */
@@ -159,7 +185,7 @@ footer {
   font-size: 16px;
   font-weight: 100;
   padding-top: 10px;
-  color: #2A343D;
+  color: #4C555E;
   text-align: center;
 }
 
@@ -476,7 +502,7 @@ footer {
 .page-card {
   border: 1px solid #dcdcdc;
   padding: 1.5rem;
-  border-radius: 8px;
+  border-radius: none;
   background: white;
   transition: box-shadow 0.2s ease, transform 0.2s ease;
   text-align: center;
