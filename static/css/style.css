@@ -1,5 +1,5 @@
 /* ================================
-   Base elements
+  Base elements
 ================================ */
 body {
   margin: 0;
@@ -11,50 +11,50 @@ body {
 }
 
 h1 {
-    font-family: "Bodoni Moda", serif;
-    letter-spacing: 3px;
-    font-size: 64px;
-    font-weight: 100;
-    color: #2A343D;
-    white-space: normal;
+  font-family: "Bodoni Moda", serif;
+  letter-spacing: 3px;
+  font-size: 64px;
+  font-weight: 100;
+  color: #2A343D;
+  white-space: normal;
 }
 
 p {
-    font-family: "Bodoni Moda", serif;
-    letter-spacing: 2px;
-    font-size: 16px;
-    color: #2A343D;
+  font-family: "Bodoni Moda", serif;
+  letter-spacing: 2px;
+  font-size: 16px;
+  color: #2A343D;
 }
 
 a {
-    font-family: "Bodoni Moda", serif;
-    letter-spacing: 3px;
-    color: #2A343D;
-    font-size: 16px;
-    text-decoration: none;
+  font-family: "Bodoni Moda", serif;
+  letter-spacing: 3px;
+  color: #2A343D;
+  font-size: 16px;
+  text-decoration: none;
 }
   
 footer {
-    font-family: 'Monsieur La Doulaise', cursive;
-    margin-top: 60px;
-    margin-bottom: 60px;
-    font-size: 48px;
-    color: #5F6265;
-    display: flex;
-    flex-direction: column; 
-    align-items: center;
+  font-family: 'Monsieur La Doulaise', cursive;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  font-size: 48px;
+  color: #5F6265;
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
 }
 
 /* ================================
-   Reusable elements
+  Reusable elements
 ================================ */
 .height {
-    height: 100vh;
+  height: 100vh;
 }
 
 .space {
-    padding-left: 10px;
-    padding-right: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .container {
@@ -63,12 +63,6 @@ footer {
   align-items: center;
   padding: 20px 0;
   flex-wrap: wrap; /* lets content wrap when needed */
-}
-
-.three-divs-container {
-  display: flex;
-  justify-content: center;
-  margin: 40px 0;
 }
 
 .div-item {
@@ -81,21 +75,24 @@ footer {
 }
 
 .vertical-line {
-    width: 1.5px;             
-    height: 100px;
-    background-color: #2A343D;
+  width: 1.5px;             
+  height: 100px;
+  background-color: #2A343D;
 }
 
-/* TODO: duplicate horizontal line, check if this is still needed */
 .horizontal-line {
   border: none;
-  border-top: 1px solid #aaa;
+  border-top: 1px solid #2A343D;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInSubtle 1.5s ease-out forwards;
+  animation-delay: 2.5s;
 }
 
 /* ================================
   links
 ================================ */
-
 .page-link {
   position: relative;
   display: inline-block;
@@ -160,27 +157,26 @@ footer {
   color: #2A343D;
 }
 
-
 /* ================================
   Text
 ================================ */
 .small-text {
-    font-family:"Bodoni Moda", serif;
-    font-size: 16px;
-    font-weight: 100;
-    padding-top: 10px;
-    color: #2A343D;
-    text-align: center;
+  font-family:"Bodoni Moda", serif;
+  font-size: 16px;
+  font-weight: 100;
+  padding-top: 10px;
+  color: #2A343D;
+  text-align: center;
 }
 
 .info {
-    font-family: "Bodoni Moda", serif;
-    font-size: 20px;
-    font-weight: 100;
-    margin: 20px;
-    display: flex;
-    justify-content: center;
-    color: #2A343D;
+  font-family: "Bodoni Moda", serif;
+  font-size: 20px;
+  font-weight: 100;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  color: #2A343D;
 }
 
 .info h2 {
@@ -197,10 +193,10 @@ footer {
   margin-top: 0;
 }
 
-
 .info a {
-    font-size: 20px;
-    letter-spacing: 0;
+  font-size: 20px;
+  letter-spacing: 0;
+  letter-spacing: 3px;
 }
 
 .underline {
@@ -210,9 +206,9 @@ footer {
 }
 
 #initials {
-    border-bottom: 1px solid #aaa;
-    padding-top: 0 18px 16px;
-    text-transform: none;
+  border-bottom: 1px solid #aaa;
+  padding-top: 0 18px 16px;
+  text-transform: none;
 }
 
 .title {
@@ -230,7 +226,7 @@ footer {
 }
 
 /* ================================
-   Login page elements
+  Login elements
 ================================ */
 #passwordInput {
   width: 100%;
@@ -315,32 +311,17 @@ footer {
   width: 100%;
 }
 
-.horizontal-line {
-  border: none;
-  border-top: 1px solid #2A343D;
-  width: 100%;
-  opacity: 0;
-  transform: translateY(10px);
-  animation: fadeInSubtle 1.5s ease-out forwards;
-  animation-delay: 2.5s;
-}
-
 /* ================================
-   Home page
+  Home page elements
 ================================ */
 #countdown {
-    font-size: 40px;
-    letter-spacing: 3px;
-    font-weight: 100;
-    font-family: "Monsieur La Doulaise", cursive;
-    margin-top: 15px;
-    margin-bottom: 50px;
-    color: #2A343D;
-    text-transform: none; /* added to stop capitalisation of 1st letters in prod */
-    opacity: 0;
-    transform: translateY(10px);
-    animation: countdownReveal 1.8s ease-out forwards;
-    animation-delay: 1.8s; /* starts after the title fades in */
+  font-size: 40px;
+  letter-spacing: 3px;
+  font-weight: 100;
+  font-family: "Monsieur La Doulaise", cursive;
+  margin-top: 15px;
+  margin-bottom: 50px;
+  color: #2A343D;
 }
 
 .fade {
@@ -368,7 +349,7 @@ footer {
 .delay-17 { animation-delay: 7s; }
 
 /* ================================
-   RSVP page
+  RSVP form 
 ================================ */
 #target {
   padding-bottom: 0;
@@ -419,11 +400,6 @@ footer {
 }
 
 #rsvpAnother {
-  font-size: 20px;
-}
-
-/* TODO:rename to 'return-to-link' and make a class as this is being reused */
-#returnHome {
   font-size: 20px;
 }
 
@@ -559,7 +535,6 @@ footer {
 /* ================================
   Images
 ================================ */
-
 .dresscode-gallery {
   width: 100%;
 }
@@ -597,45 +572,6 @@ footer {
   }
 }
 
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-/* TODO: make fadeInSubtle into it's own class */
-.fade-in-subtle {
-  opacity: 0;
-  transform: translateY(10px);
-  animation: fadeInSubtle 2.5s ease-out forwards;
-}
-
-@keyframes fadeUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-    letter-spacing: 28px;
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-    letter-spacing: 20px;
-  }
-}
-
-@keyframes countdownReveal {
-  0% {
-    opacity: 0;
-    transform: translateY(15px);
-    letter-spacing: 8px;
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-    letter-spacing: 3px;
-  }
-}
-
 /* Shake animation for the error message */
 @keyframes shake {
   0% { transform: translateX(0); }
@@ -646,9 +582,16 @@ footer {
   100% { transform: translateX(0); }
 }
 
+.fade-in-subtle {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInSubtle 2.5s ease-out forwards;
+}
+
 /* ================================
-   Media queries
+  Media queries
 ================================ */
+/* Mobile */
 @media (max-width: 768px) {
   .container {
     flex-direction: column;
@@ -683,14 +626,14 @@ footer {
   }
 }
 
-/* Tablet: 2 columns */
+/* Tablet */
 @media (min-width: 768px) {
   .page-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* Large desktop: 3 columns */
+/* Large desktop */
 @media (min-width: 1200px) {
   .page-grid {
     grid-template-columns: repeat(3, 1fr);
