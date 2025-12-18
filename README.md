@@ -2,8 +2,6 @@
 
 #### Video Demo: <URL>
 
-#### Live Site: https://estephanddavid.com/
-
 #### Description:
 At the time of choosing a project to submit as part of CS50, I had recently booked my wedding venue for September 2026 and knew I would need a wedding website. After exploring existing website templates, I found them either too restrictive in terms of customisation or the ones I really liked were too expensive. This led me to build my own website as my final project.
 
@@ -13,6 +11,8 @@ The website centralises all essential wedding information in a single applicatio
 
 The project combines frontend development for layout and styling with backend logic for routing, templating, authentication, and form handling via an external API. This is a full-stack web application built using Flask, Python, HTML, CSS, and JavaScript, and deployed on Fly.io. 
 
+#### Live Site: https://estephanddavid.com/
+
 ## Project Status
 
 At the time of submission, the wedding is scheduled for next year. 
@@ -20,25 +20,23 @@ Some details will be updated after the CS50 submission deadline as wedding plans
 
 ## Features
 
-- Responsive website for mobile and desktop devices
+- Responsive website for mobile and desktop devices.
 
-- Wedding event details, including date, time, and location
+- Wedding event details, including date, time, and location.
 
-- Venue, travel, and accommodation information
+- Venue, travel, and accommodation information.
 
-- FAQs, registry, and dress code details
+- FAQs, registry, and dress code details.
 
-- RSVP form integrated with Freeform for submission handling and dashboard viewing
+- RSVP form integrated with Freeform for submission handling and dashboard viewing.
 
-- Client-side form validation using JavaScript
+- Client-side enhancements using JavaScript, including dynamic form behaviour, countdown timer, smooth scrolling, and session-aware navigation.
 
-- Password-protected guest access with validation using Python
+- Password-protected guest access with validation using Python.
 
-- Backend routing and templating using Flask
+- Backend routing and templating using Flask.
 
-- Automated deployment to Fly.io using Docker and GitHub Actions, enabling instant updates to the live site
-
-- Hosted on a custom domain
+- Automated deployment to Fly.io using Docker and GitHub Actions, enabling instant updates to the live site.
 
 ## Technologies used
 
@@ -52,7 +50,7 @@ Some details will be updated after the CS50 submission deadline as wedding plans
 
 - **JavaScript**: Used for client-side interactivity and form validation.
 
-- **Freeform**: Used to handle RSVP form submissions and view responses without 
+- **Freeform**: Used to handle RSVP form submissions and view responses without
 implementing a database.
 
 - **Fly.io**: Used to host the application.
@@ -61,7 +59,7 @@ implementing a database.
 
 - **Docker**: Used to containerise the application for deployment on Fly.io.
 
-- **Custom Domain**: Personalises our web address 
+- **AWS Route 53** – Used for custom domain registration and DNS routing to Fly.io.
 
 ## File Structure
 
@@ -94,7 +92,7 @@ implementing a database.
 │   ├── registry.html           # Registry page
 │   └── faq.html                # FAQs page
 ├── .dockerignore               # Files to ignore in Docker builds
-├── .gitignore                  # Files to ignore in Git version control
+├── .gitignore                  # Files to ignore in GitHub
 ├── app.py                      # Main Flask application and route definitions
 ├── Dockerfile                  # Docker configuration for Fly.io deployment
 ├── fly.toml                    # Fly.io application configuration
@@ -108,7 +106,7 @@ implementing a database.
 
 #### Frontend 
 
-The frontend is built using HTML, CSS, and JavaScript. HTML provides the structural layout of the website, while CSS is responsible for styling, animations, and responsive layouts across mobile and desktop devices. JavaScript is used to enhance interactivity and dynamic behaviour, such as adapting form fields based on user input (for example, conditionally displaying additional fields for dietary requirements), handlingn browser sessions, implementing a countdown to the wedding date, and enabling smooth scrolling between sections.
+The frontend is built using HTML, CSS, and JavaScript. HTML provides the structural layout of the website, while CSS is responsible for styling, animations, and responsive layouts across mobile and desktop devices. JavaScript is used to enhance interactivity and dynamic behaviour, such as adapting form fields based on user input (for example, conditionally displaying additional fields for dietary requirements), handling browser sessions, implementing a countdown to the wedding date, and enabling smooth scrolling between sections.
 
 This combination ensures a smooth, user-friendly experience while keeping the frontend logic focused on usability and presentation.
 
@@ -116,7 +114,7 @@ This combination ensures a smooth, user-friendly experience while keeping the fr
 
 The backend is built using Flask, which handles routing, templating, and overall application structure. Pages use Jinja templates to render content dynamically and password-protected access ensures that only invited guests can view the content of the website.
 
-Password validation is handled on the backend using environment variables, with values defined locally for development and securely configured as `secrets` in Fly.io for production. This avoids hardcoding sensitive information in the codebase and follows basic security best practices. Backend logic verifies user input before granting access, while frontend JavaScript manages the user interaction.
+Password validation is handled in the backend using environment variables, with values defined locally for development and securely configured as `secrets` in Fly.io for production. This avoids hardcoding sensitive information in the codebase and follows basic security best practices. Backend logic verifies user input before granting access, while frontend JavaScript manages the user interaction.
 
 This separation of concerns keeps the backend focused on application logic and security, while the frontend handles presentation and interactivity.
 
@@ -130,7 +128,7 @@ The application uses a simple password-based authentication mechanism. Login is 
 
 The Flask `/` route always returns JSON responses for login attempts. On successful authentication, the frontend JavaScript performs the redirect to `/home`.
 
-**Note:**  
+***Note:*** 
 This authentication flow evolved during deployment to Fly.io, where a server-side redirect caused issues with form submission using an incorrect password. The final implementation was adopted intentionally to improve reliability and user experience. Further details are documented in the **Bug Fixes** section.
 
 #### RSVP form Handling
@@ -148,15 +146,15 @@ This approach keeps the website lightweight while taking advantage of Formspree�
 
 #### Platform hosting
 
-The project was initially hosted on AWS Amplify, as the website was originally planned as a static application. Amplify provides a simple and cost-effective way to deploy static sites quickly and was well suited for the early version of the project.
+The project was initially hosted on [AWS Amplify](https://aws.amazon.com/amplify/), as the website was originally planned as a static application. Amplify provides a simple and cost-effective way to deploy static sites quickly and was well suited for the early version of the project.
 
 As the scope evolved, the website was refactored into a Flask application to support dynamic routing, server-side templating, and more secure password handling. During this transition, it became clear that the project would benefit from a hosting platform capable of running a backend application with minimal setup and overhead.
 
-After evaluating several options, Fly.io was selected due to its native Docker support, lightweight configuration, and ability to deploy applications close to users geographically. This was particularly important given that guests will be accessing the site from Europe, North America, and Japan. Fly.io also made it straightforward to integrate a custom domain, allowing the domain purchased through AWS Route 53 to be linked directly to the deployed application.
+After evaluating several options, [Fly.io](https://fly.io/) was selected due to its native Docker support, lightweight configuration, and ability to deploy applications close to users geographically. This was particularly important given that guests will be accessing the site from Europe, North America, and Japan. Fly.io also made it straightforward to integrate a custom domain, allowing the domain purchased through [AWS Route 53](https://aws.amazon.com/route53/) to be linked directly to the deployed application.
 
 #### CI/CD
 
-Deployment is automated using Fly.io’s integration with GitHub Actions. When the application was initially deployed to Fly.io, a GitHub Actions workflow was generated to handle future deployments. This workflow triggers on pushes to the `main` branch, automatically building a Docker image of the application and deploying it to Fly.io.
+Deployment is automated using Fly.io’s integration with [GitHub Actions](https://github.com/features/actions). When the application was initially deployed to Fly.io, a GitHub Actions workflow was generated to handle future deployments. This workflow triggers on pushes to the `main` branch, automatically building a Docker image of the application and deploying it to Fly.io.
 
 Any changes pushed to the repository are automatically deployed to the live site, reducing manual steps and ensuring consistency between local development and production. While additional automation or features could be added, this workflow provides sufficient functionality for the scope of the website.
 
@@ -173,7 +171,7 @@ To run the wedding website locally, follow these steps:
 **Prerequisites:**
 - Python 3.10+ installed
 
-- pip (Python package manager)
+- Pip installed (Python package manager)
 
 - (Optional) Docker if you want to run via container
 
@@ -197,11 +195,10 @@ To run the wedding website locally, follow these steps:
 
 4. Set environment variables
 
-Create a `.env` file in the project root with your secret values:
-    ```
+The password for accessing protected pages is not included in the repository. You will need to create your own `.env` file with a `PASSWORD` (and optionally `FLASK_SECRET_KEY`) to run the site locally.
+
     PASSWORD=<choose-a-password>
     FLASK_SECRET_KEY=<your-secret-key>  # Optional, for session security
-    ```
 
 5. Run flask application
     ```
@@ -224,11 +221,9 @@ Then open your browser at http://127.0.0.1:5000.
 
 - RSVP submissions locally will only work if you have your own Formspree account and endpoint. The current endpoint in the project is private, so you will not receive notifications or see submissions unless you replace it with your own.
 
-- The password for accessing protected pages is not included in the repository. You will need to create your own `.env` file with a `PASSWORD` (and optionally `FLASK_SECRET_KEY`) to run the site locally.
-
 ## Deployment
 
-The wedding website is deployed on [Fly.io](https://fly.io/), which allows the Flask application to run as a containerised service accessible worldwide. Deployment is automated via GitHub Actions:
+The wedding website is deployed on Fly.io, which allows the Flask application to run as a containerised service accessible worldwide. Deployment is automated via GitHub Actions:
 
 **1. CI/CD Workflow**
 
@@ -240,7 +235,7 @@ The wedding website is deployed on [Fly.io](https://fly.io/), which allows the F
 
 **2. Custom Domain**
 
-- The website is linked to a custom domain purchased via AWS Route 53. Fly.io automatically routes traffic to the live application using this domain. 
+- The website is linked to a custom domain purchased via AWS Route 53]. Fly.io automatically routes traffic to the live application using this domain. 
 
 **3. Environment Variables**
 
@@ -310,7 +305,7 @@ fly secrets set PASSWORD="my-password"
 
 - [Fly.io](https://fly.io/) documentation for guidance on containerised deployment and CI/CD integration.
 
-- Open-source resources, libraries, and code snippets used throughout the project.
+- Open-source resources, libraries, Youtube and code snippets used throughout the project.
 
 - Friends and family for testing the website and providing feedback on usability and design.
 
