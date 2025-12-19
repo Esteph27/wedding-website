@@ -2,6 +2,8 @@
 
 #### Video Demo: <URL>
 
+#### Live Site: https://estephanddavid.com/
+
 #### Description:
 At the time of choosing a project to submit as part of CS50, I had recently booked my wedding venue for September 2026 and knew I would need a wedding website. After exploring existing website templates, I found them either too restrictive in terms of customisation or the ones I really liked were too expensive. This led me to build my own website as my final project.
 
@@ -10,8 +12,6 @@ By building the site from scratch, I was able to design and implement a solution
 The website centralises all essential wedding information in a single application, including event details, venue and travel information, FAQs, Dress code and the ability to RSVP online.
 
 The project combines frontend development for layout and styling with backend logic for routing, templating, authentication, and form handling via an external API. This is a full-stack web application built using Flask, Python, HTML, CSS, and JavaScript, and deployed on Fly.io. 
-
-#### Live Site: https://estephanddavid.com/
 
 ## Project Status
 
@@ -28,7 +28,7 @@ Some details will be updated after the CS50 submission deadline as wedding plans
 
 - FAQs, registry, and dress code details.
 
-- RSVP form integrated with Freeform for submission handling and dashboard viewing.
+- RSVP form integrated with Formspree for submission handling and dashboard viewing.
 
 - Client-side enhancements using JavaScript, including dynamic form behaviour, countdown timer, smooth scrolling, and session-aware navigation.
 
@@ -48,10 +48,11 @@ Some details will be updated after the CS50 submission deadline as wedding plans
 
 - **CSS**: Used for styling and responsive layout.
 
+- **Bootstrap**: Used for page tabs and accordions.
+
 - **JavaScript**: Used for client-side interactivity and form validation.
 
-- **Freeform**: Used to handle RSVP form submissions and view responses without
-implementing a database.
+- **Formspree**: Used for RSVP form integration.
 
 - **Fly.io**: Used to host the application.
 
@@ -59,9 +60,10 @@ implementing a database.
 
 - **Docker**: Used to containerise the application for deployment on Fly.io.
 
-- **AWS Route 53** – Used for custom domain registration and DNS routing to Fly.io.
+- **AWS Route 53**: Used for custom domain registration and DNS routing to Fly.io.
 
 ## File Structure
+An overview of the project's file structure, showing how the code, templates, static assets, and configuration files are organised.
 
 ```
 .
@@ -125,12 +127,12 @@ The application uses a simple password-based authentication mechanism. Login is 
 
 - Prevent full page reloads on failed login attempts
 - Allow client-side error handling and animations
-- Avoid re-triggering page animations on incorrect passwords
+- Ensure correct password logins are handled without errors
 
 The Flask `/` route always returns JSON responses for login attempts. On successful authentication, the frontend JavaScript performs the redirect to `/home`.
 
 ***Note:*** 
-This authentication flow evolved during deployment to Fly.io, where a server-side redirect caused issues with form submission using an incorrect password. The final implementation was adopted intentionally to improve reliability and user experience. Further details are documented in the **Bug Fixes** section.
+During deployment to Fly.io, using a server-side redirect caused a 500 Internal Server Error, even when the correct password was submitted. Switching to a JSON response handled entirely by JavaScript resolved this, ensuring reliable redirects and proper error handling. Further details are documented in the **Bug Fixes** section.
 
 #### RSVP form Handling
 
@@ -151,7 +153,7 @@ The project was initially hosted on [AWS Amplify](https://aws.amazon.com/amplify
 
 As the scope evolved, the website was refactored into a Flask application to support dynamic routing, server-side templating, and more secure password handling. During this transition, it became clear that the project would benefit from a hosting platform capable of running a backend application with minimal setup and overhead.
 
-After evaluating several options, [Fly.io](https://fly.io/) was selected due to its native Docker support, lightweight configuration, and ability to deploy applications close to users geographically. This was particularly important given that guests will be accessing the site from Europe, North America, and Japan. Fly.io also made it straightforward to integrate a custom domain, allowing the domain purchased through [AWS Route 53](https://aws.amazon.com/route53/) to be linked directly to the deployed application.
+After evaluating several options, [Fly.io](https://fly.io/) was selected due to its native Docker support, lightweight configuration, and ability to deploy applications close to users geographically. This was particularly important given that guests will be accessing the site not only from the UK, but also from Europe, North America, and Japan. Fly.io also made it straightforward to integrate a custom domain, allowing the domain purchased through [AWS Route 53](https://aws.amazon.com/route53/) to be linked directly to the deployed application.
 
 #### CI/CD
 
@@ -236,7 +238,7 @@ The wedding website is deployed on Fly.io, which allows the Flask application to
 
 **2. Custom Domain**
 
-- The website is linked to a custom domain purchased via AWS Route 53]. Fly.io automatically routes traffic to the live application using this domain. 
+- The website is linked to a custom domain purchased via AWS Route 53. Fly.io automatically routes traffic to the live application using this domain. 
 
 **3. Environment Variables**
 
@@ -251,11 +253,15 @@ To maintain code quality and consistency, the following tools were used:
 - **Flake8**  
     Used to enforce PEP8 style guidelines and identify common issues such as unused imports and formatting inconsistencies in the Flask application.
 
+    Currently all python code passes Flask8 linting checks.
+
     https://flake8.pycqa.org/en/latest/
 
 ### Accessability
 - **Lighthouse**  
     Used to audit performance, accessibility, best practices, and SEO for the deployed site.
+    
+    The website achieved > 90 for Performance and Accessibility, 100 for Best Practices, and 50 for SEO. The lower SEO score is intentional, as a robots.txt file prevents the site from being indexed (as this is a private wedding website).
     
     https://developer.chrome.com/docs/lighthouse/overview
 
@@ -299,17 +305,19 @@ fly secrets set PASSWORD="my-password"
 
 #### Error 2: RSVP form validation error for conditional fields
 
-When submitting the RSVP form with empty fields, the browser raised an
-`An invalid form control is not focusable` error.
+When submitting the RSVP form, the browser occasionally raised an `An invalid form control is not focusable` error.
 
 **Cause**
 
-A `required` dietary field was hidden based on user input while still being marked as required.
+The `required` attribute is still set on the dropdown. Conditional fields handled by JavaScript (like “Other”) work correctly, but this case triggers the HTML5 validation warning.
+
 
 **Solution**
 
-Required attributes are now dynamically toggled in JavaScript (rsvp.js) based on field visibility, ensuring HTML5 validation behaves correctly.
+Required attributes are now dynamically toggled in JavaScript (rsvp.js) based on field visibility. This resolves the error when submitting an entirely empty form or leaving the "Other" dietary field empty. 
 
+**Note:**
+The error still occurs if the main "Dietary Requirements" select is left unselected, but it does not impact functionality. This error only appears in the console.
 
 ## Acknowledgements
 
@@ -319,7 +327,11 @@ Required attributes are now dynamically toggled in JavaScript (rsvp.js) based on
 
 - [Fly.io](https://fly.io/) documentation for guidance on containerised deployment and CI/CD integration.
 
-- Open-source resources, libraries, Youtube and code snippets used throughout the project.
+- [BootStrap](https://getbootstrap.com/) for providing responsive components.
+
+- Open-source resources and libraries used throughout the project including:
+    - [MDN](https://developer.mozilla.org/en-US/) for guidance on JavaScript scrollIntoView() method and HTML5 form validation.
+    - [w3schools](https://www.w3schools.com/) for general reference and code examples.
 
 - Friends and family for testing the website and providing feedback on usability and design.
 
