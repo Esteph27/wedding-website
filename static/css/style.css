@@ -419,7 +419,7 @@ footer {
   transform: scale(1.05);
 }
 
-#rsvpAnother {
+.rsvp-another {
   font-size: 20px;
 }
 

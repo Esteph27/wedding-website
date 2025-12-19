@@ -62,30 +62,45 @@ document.addEventListener("DOMContentLoaded", () => {
       form.classList.remove("show-content");
       form.classList.add("hidden-section");
 
+      // target section on screen
+      let targetSection;
+
       if (attendingSelect.value === "no") {
         guestNotAttending.classList.add("show-content");
+        targetSection = guestNotAttending;
       } else {
         postRsvpOptions.classList.add("show-content");
+        targetSection = postRsvpOptions;
       }
+
+      // scroll to displayed section into view
+      // https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView
+      targetSection.scrollIntoView({ behavior: "smooth", block: "center" });
+      
     } else {
       alert("There was a problem submitting your RSVP. Please try again. If the problem persists, please reach out to David or Esteph.");
     }
   });
 
   // --- handle RSVP for someone else ---
-  document.getElementById("rsvpAnother").addEventListener("click", function () {
-    form.reset();
-    form.classList.add("show-content");
-    form.classList.remove("hidden-section");
+  document.querySelectorAll(".rsvp-another").forEach(link => {
+    link.addEventListener("click", () => {
+      form.reset();
+      form.classList.add("show-content");
+      form.classList.remove("hidden-section");
 
-    guestAttending.classList.remove("show-content");
-    otherDietContainer.classList.remove("show-content");
-    postRsvpOptions.classList.remove("show-content");
-    guestNotAttending.classList.remove("show-content");
+      guestAttending.classList.remove("show-content");
+      otherDietContainer.classList.remove("show-content");
+      postRsvpOptions.classList.remove("show-content");
+      guestNotAttending.classList.remove("show-content");
 
-    // re-enable main fields
-    dietSelect.disabled = false;
-    otherDietInput.disabled = true;
+      // re-enable main fields
+      dietSelect.disabled = false;
+      otherDietInput.disabled = true;
+
+      // scroll form into view
+      form.scrollIntoView({ behavior: "smooth", block: "center" });
+    });
   });
 });
 
