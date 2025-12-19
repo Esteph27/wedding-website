@@ -568,7 +568,8 @@ footer {
 }
 
 /* ================================
-   Animations
+  Animations
+  https://www.w3schools.com/Css/css3_animations.asp
 ================================ */
 @keyframes expandIn {
   0% {
