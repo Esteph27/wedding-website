@@ -50,6 +50,8 @@ Some details will be updated after the CS50 submission deadline as wedding plans
 
 - **Bootstrap**: Used for page tabs and accordions.
 
+- **Favicon**: Added to improve site identification in browser tabs and bookmarks.
+
 - **JavaScript**: Used for client-side interactivity and form validation.
 
 - **Formspree**: Used for RSVP form integration.
@@ -73,6 +75,8 @@ An overview of the project's file structure, showing how the code, templates, st
 ├── static/
 │   ├── css/
 │   │   └── style.css          # Styling and responsive layout
+│   ├── favicon/
+│   │   └── favicon assets      # Folder with Favicon generated files
 │   ├── js/
 │   │   ├── countdown.js        # Countdown to wedding day
 │   │   ├── login.js            # Prevents page reload on incorrect password
@@ -110,6 +114,8 @@ An overview of the project's file structure, showing how the code, templates, st
 #### Frontend 
 
 The frontend is built using HTML, CSS, and JavaScript. HTML provides the structural layout of the website, while CSS is responsible for styling, animations, and responsive layouts across mobile and desktop devices. JavaScript is used to enhance interactivity and dynamic behaviour, such as adapting form fields based on user input (for example, conditionally displaying additional fields for dietary requirements), handling browser sessions, implementing a countdown to the wedding date, and enabling smooth scrolling between sections.
+
+In addition to the above, a favicon was added to help the user identify the site easily in browser tabs and bookmarks.
 
 This combination ensures a smooth, user-friendly experience while keeping the frontend logic focused on usability and presentation.
 
@@ -328,6 +334,8 @@ The error still occurs if the main "Dietary Requirements" select is left unselec
 - [Fly.io](https://fly.io/) documentation for guidance on containerised deployment and CI/CD integration.
 
 - [BootStrap](https://getbootstrap.com/) for providing responsive components.
+
+- [Favicon-generator](https://favicon.io/favicon-generator/) for generating the websites favicons.
 
 - [Airbnb](https://www.airbnb.co.uk/help/article/923) for providing embedded listings for showcasing venues.
 
