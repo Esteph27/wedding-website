@@ -329,6 +329,8 @@ The error still occurs if the main "Dietary Requirements" select is left unselec
 
 - [BootStrap](https://getbootstrap.com/) for providing responsive components.
 
+- [Airbnb](https://www.airbnb.co.uk/help/article/923) for providing embedded listings for showcasing venues.
+
 - Open-source resources and libraries used throughout the project including:
     - [MDN](https://developer.mozilla.org/en-US/) for guidance on JavaScript scrollIntoView() method and HTML5 form validation.
     - [w3schools](https://www.w3schools.com/) for general reference and code examples.
