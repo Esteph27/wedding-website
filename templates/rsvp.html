@@ -14,18 +14,19 @@
 <!-- rsvp info and welcome message -->
 <div class="info">
     <div>
-        <p>We are so excited to celebrate our special day with you!
-            <br><br>
-            Please let us know if you'll be joining us by completing the RSVP below.
-        </p>
         <p>
-            Kindly note that this is an <span class="underline">adult-only</span> celebration, 
-            and invitations are extended only to those named on your invite.
-            <br><br>
-            Please RSVP by <span class="underline">12th March 2026</span> so we can finalise numbers.
-        </p>
-        <p>
-            We can't wait to share this unforgettable day with our closest family and friends!
+            We are so excited to celebrate our special day with you!
+            <br>
+            Please let us know if you'll be joining us by completing the RSVP form below.
+            <br>
+            <br>
+            Kindly RSVP by <span class="underline">12th March 2026</span> so we can finalise numbers.
+            Responses received after this date cannot be guaranteed.
+            <br>
+            <br>
+            We can't wait to share this unforgettable day with our family and friends!
+            <br>
+            x
         </p>
     </div>
 </div>
@@ -98,25 +99,31 @@
 
     <!-- if "no" selected -->
     <div id="guestNotAttending" class="hidden-section">
-        <p>We'll miss you, but thank you for letting us know.
-            <br>
-            x
-        </p>
-    </div>
-
-    <!-- after submission -->
-    <div id="postRsvpOptions" class="hidden-section">
-        <h3>Thank you!</h3>
         <p>Your RSVP has been sent.
             <br>
-            We look forward to celebrating with you!
+            We'll miss you, but thank you for letting us know.
             <br>
             x
         </p>
         <div class="container">
             <div class="vertical-line"></div>
         </div>
-        <a id="rsvpAnother" class="page-link">RSVP for someone else?</a>
+        <a class="rsvp-another page-link">RSVP for someone else?</a>
+    </div>
+
+    <!-- if "yes" selected -->
+    <div id="postRsvpOptions" class="hidden-section">
+        <h3>Thank you!</h3>
+        <p>Your RSVP has been sent.
+            <br>
+            We can't wait to celebrate with you!
+            <br>
+            x
+        </p>
+        <div class="container">
+            <div class="vertical-line"></div>
+        </div>
+        <a class="rsvp-another page-link">RSVP for someone else?</a>
     </div>
 
     <!-- return home -->
