@@ -1,6 +1,6 @@
 # Wedding Website
 
-#### Video Demo: <URL>
+#### Video Demo: https://youtu.be/QYIgyZ7ynPM
 
 #### Live Site: https://estephanddavid.com/
 
